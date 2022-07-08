@@ -28,13 +28,24 @@ const getAllPara = (graphql) =>
   );
 
 //根据 tag 分组的信息
-const groupByTags = () => {};
+const groupByTags = (posts) => {
+  return posts.reduce((acc, cur) => {
+    return post.node.frontmatter.tags.forEach((tag) => {
+      if (!acc[tag]) {
+        acc[tag] = 0;
+      }
+      acc[tag]++;
+      return acc;
+    });
+  }, {});
+};
 
 // 根据 Area 分组的信息 （暂时还没有）
 const groupByAreas = () => {};
 const renderVisiblePost = (posts, createPage) => {
   const postsPerPage = 9;
 
+  const tagGroup = groupByTags(posts);
   const numberPages = Math.ceil(posts.length / postsPerPage);
 
   const blogPost = path.resolve('./src/templates/blog-post.tsx');
@@ -50,6 +61,7 @@ const renderVisiblePost = (posts, createPage) => {
         skip: i * postsPerPage,
         numberPages,
         currentPage: i + 1,
+        tagGroup,
       },
     });
   });
