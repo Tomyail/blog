@@ -1,4 +1,5 @@
 import path from 'path';
+process.env.GATSBY_GIT_COMMIT= process.env.VERCEL_GIT_COMMIT_SHA || ""
 export default {
   siteMetadata: {
     title: 'Tomyail 的记忆现场',
