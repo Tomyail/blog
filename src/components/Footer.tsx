@@ -14,7 +14,7 @@ const heartBeat = keyframes(`
 const Footer = () => {
   //inspect VERCEL_GIT_COMMIT_SHA env
   const source = process.env.GATSBY_GIT_COMMIT
-    ? `https://github.com/Tomyail/blog/tree/${process.env.GATSBY_GIT_COMMIT}`
+    ? `https://github.com/Tomyail/blog/commit/${process.env.GATSBY_GIT_COMMIT}`
     : 'https://github.com/Tomyail/blog';
   const data = useStaticQuery(graphql`
     query BlogDesc {
