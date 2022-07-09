@@ -70,7 +70,7 @@
     "unified": "10.1.2",
     "unist-util-filter": "4.0.0",
     "unist-util-visit": "4.1.0",
-    "vfile-reporter": "6.0.2"
+    "vfile-reporter": "7.0.4"
   },
   "keywords": [
     "gatsby",
