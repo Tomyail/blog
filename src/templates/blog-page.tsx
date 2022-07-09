@@ -147,7 +147,7 @@ const BlogIndex = (props) => {
 };
 
 export default BlogIndex;
-export const pageQuery = graphql`
+export const query = graphql`
   query IndexQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {

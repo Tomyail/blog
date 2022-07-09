@@ -37,7 +37,9 @@ const renderVisiblePost = (posts, createPage) => {
 
   const numberPages = Math.ceil(posts.length / postsPerPage);
 
-  const blogPost = path.resolve('./src/templates/blog-post.tsx');
+  const blogPost = path.resolve(
+    './src/templates/blog-post.tsx'
+  );
 
   Array.from({ length: numberPages }).forEach((_, i) => {
     createPage({

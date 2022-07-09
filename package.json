@@ -77,7 +77,6 @@
     "blog"
   ],
   "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "now-build": "npm run build",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",

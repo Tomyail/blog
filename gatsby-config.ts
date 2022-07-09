@@ -34,7 +34,7 @@ export default {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: path.join(__dirname, '..', 'src', 'pages', 'publish'),
+        path: path.join(__dirname, 'src', 'pages', 'publish'),
         name: 'pages',
       },
     },
@@ -132,9 +132,9 @@ export default {
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
+        // stylesProvider: {
+        //   injectFirst: true,
+        // },
       },
     },
     // !!
