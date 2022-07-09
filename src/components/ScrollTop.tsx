@@ -1,4 +1,4 @@
-import { Box, useScrollTrigger, useTheme, Zoom } from '@material-ui/core';
+import { Box, useScrollTrigger, useTheme, Zoom } from '@mui/material';
 import React from 'react';
 
 export function ScrollTop(props: Props) {

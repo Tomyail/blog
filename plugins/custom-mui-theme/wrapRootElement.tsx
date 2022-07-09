@@ -1,7 +1,14 @@
-import { CssBaseline } from '@material-ui/core';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider, Theme, StyledEngineProvider } from '@mui/material/styles';
 import React from 'react';
 import { CustomThemeProvider, useTheme } from '.';
+
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
+
 
 export const wrapRootElement = ({ element }) => {
   return (
@@ -14,9 +21,11 @@ export const wrapRootElement = ({ element }) => {
 const MaterialRoot = ({ children }) => {
   const { theme } = useTheme();
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {children}
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 };

@@ -11,7 +11,7 @@ import {
   Toolbar,
   useTheme,
   Link as MLink,
-} from '@material-ui/core';
+} from '@mui/material';
 import { graphql } from 'gatsby';
 import Link from 'gatsby-link';
 import get from 'lodash/get';
@@ -96,54 +96,52 @@ const BlogIndex = (props) => {
 
   const theme = useTheme();
   const [open, setOpen] = useState(false);
-  return (
-    <>
-      <Helmet title={siteTitle} />
-      <Header
-        showDrawerSwitch
-        onSwitchClick={() => {
-          setOpen((o) => !o);
-        }}
-      />
-      <Hidden mdDown>
-        <Box display="flex">
-          <Main {...props} />
-          <Drawer
-            variant="permanent"
-            anchor="right"
-            sx={{ width: 16 * 8, '& .MuiPaper-root': { width: 16 * 8 } }}
-          >
-            <Toolbar />
-            <Profile />
-          </Drawer>
-        </Box>
-      </Hidden>
-      <Hidden mdUp>
+  return <>
+    <Helmet title={siteTitle} />
+    <Header
+      showDrawerSwitch
+      onSwitchClick={() => {
+        setOpen((o) => !o);
+      }}
+    />
+    <Hidden lgDown>
+      <Box display="flex">
         <Main {...props} />
-        <SwipeableDrawer
-          onClose={(event) => {
-            setOpen(false);
-          }}
-          onOpen={() => {
-            setOpen(true);
-          }}
-          open={open}
-          variant="temporary"
+        <Drawer
+          variant="permanent"
           anchor="right"
+          sx={{ width: 16 * 8, '& .MuiPaper-root': { width: 16 * 8 } }}
         >
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              padding: theme.spacing(0, 1),
-            }}
-          >
-            <Profile />
-          </Box>
-        </SwipeableDrawer>
-      </Hidden>
-    </>
-  );
+          <Toolbar />
+          <Profile />
+        </Drawer>
+      </Box>
+    </Hidden>
+    <Hidden mdUp>
+      <Main {...props} />
+      <SwipeableDrawer
+        onClose={(event) => {
+          setOpen(false);
+        }}
+        onOpen={() => {
+          setOpen(true);
+        }}
+        open={open}
+        variant="temporary"
+        anchor="right"
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            padding: theme.spacing(0, 1),
+          }}
+        >
+          <Profile />
+        </Box>
+      </SwipeableDrawer>
+    </Hidden>
+  </>;
 };
 
 export default BlogIndex;

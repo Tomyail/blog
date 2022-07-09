@@ -1,4 +1,4 @@
-import { Box, CardHeader, Typography, useTheme } from '@material-ui/core';
+import { Box, CardHeader, Typography, useTheme } from '@mui/material';
 // import { Link } from 'reach';
 import Link from 'gatsby-link';
 import get from 'lodash/get';

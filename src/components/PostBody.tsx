@@ -1,22 +1,16 @@
-import { Theme, useTheme } from '@material-ui/core/styles';
-import ArrowBackIosOutlinedIcon from '@material-ui/icons/ArrowBackIosOutlined';
-import ArrowForwardIosOutlinedIcon from '@material-ui/icons/ArrowForwardIosOutlined';
+import { Theme, useTheme } from '@mui/material/styles';
+import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import Disqus from 'disqus-react';
 import Link from 'gatsby-link';
 import truncate from 'lodash/truncate';
 import * as React from 'react';
 import 'typeface-roboto';
-import {
-  Box,
-  Button,
-  Container,
-  Fab,
-  Typography,
-  withStyles,
-  withTheme,
-} from '../../node_modules/@material-ui/core';
+import { Box, Button, Container, Fab, Typography } from '@mui/material';
+import withStyles from '@mui/styles/withStyles';
+import withTheme from '@mui/styles/withTheme';
 import { ScrollTop } from './ScrollTop';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Divider from './Divider';
 
 //https://github.com/mui-org/material-ui/blob/62883f7369a2a7dcb8b77a77b2c65a62c1615926/docs/src/modules/components/MarkdownElement.js#L6

@@ -1,13 +1,13 @@
 import constate from 'constate';
 import React, { useEffect, useState } from 'react';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { createMuiTheme } from '@material-ui/core';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { createTheme, adaptV4Theme } from '@mui/material';
 
 const useThemeHook = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const originTheme = React.useMemo(
     () =>
-      createMuiTheme({
+      createTheme(adaptV4Theme({
         palette: {
           mode: prefersDarkMode ? 'dark' : 'light',
           primary: {
@@ -17,7 +17,7 @@ const useThemeHook = () => {
             main: '#e91e63',
           },
         },
-      }),
+      })),
     [prefersDarkMode]
   );
 

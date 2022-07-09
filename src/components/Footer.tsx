@@ -1,6 +1,6 @@
-import { Box, Link, useMediaQuery, useTheme } from '@material-ui/core';
-import FavoriteOutlinedIcon from '@material-ui/icons/FavoriteOutlined';
-import { keyframes } from '@material-ui/styled-engine';
+import { Box, Link, useMediaQuery, useTheme } from '@mui/material';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import { keyframes } from '@mui/styled-engine';
 import { graphql, useStaticQuery } from 'gatsby';
 import * as React from 'react';
 const heartBeat = keyframes(`

@@ -1,4 +1,4 @@
-import { Divider, experimentalStyled } from '@material-ui/core';
+import { Divider, experimentalStyled } from '@mui/material';
 
 export default experimentalStyled(Divider)(({ theme }) => ({
   marginTop: theme.spacing(1),

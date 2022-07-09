@@ -1,15 +1,14 @@
-import { createMuiTheme, Hidden, IconButton } from '@material-ui/core';
-import AppBar from '@material-ui/core/AppBar';
-import { Theme } from '@material-ui/core/styles';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
-import Brightness7RoundedIcon from '@material-ui/icons/Brightness7Rounded';
-import DehazeIcon from '@material-ui/icons/Dehaze';
+import { createTheme, Hidden, IconButton, adaptV4Theme } from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import { Theme } from '@mui/material/styles';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { useTheme } from '../../plugins/custom-mui-theme';
-import DehazeOutlinedIcon from '@material-ui/icons/DehazeOutlined';
+import DehazeOutlinedIcon from '@mui/icons-material/DehazeOutlined';
 const Header = ({ showDrawerSwitch, onSwitchClick }) => {
   const { setTheme, theme } = useTheme();
   const data = useStaticQuery(graphql`
@@ -50,7 +49,7 @@ const Header = ({ showDrawerSwitch, onSwitchClick }) => {
               onClick={() => {
                 onSwitchClick && onSwitchClick();
               }}
-            >
+              size="large">
               <DehazeOutlinedIcon />
             </IconButton>
           </Hidden>
@@ -59,7 +58,7 @@ const Header = ({ showDrawerSwitch, onSwitchClick }) => {
           aria-label="switch theme"
           sx={{ color: 'white' }}
           onClick={() => {
-            const newTheme = createMuiTheme({
+            const newTheme = createTheme(adaptV4Theme({
               palette: {
                 primary: {
                   main: theme.palette.primary.main,
@@ -70,10 +69,10 @@ const Header = ({ showDrawerSwitch, onSwitchClick }) => {
                 mode:
                   (theme as Theme).palette.mode === 'dark' ? 'light' : 'dark',
               },
-            });
+            }));
             setTheme(newTheme);
           }}
-        >
+          size="large">
           {(theme as Theme).palette.mode === 'dark' ? (
             <Brightness7RoundedIcon /> //light
           ) : (
