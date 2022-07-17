@@ -7,7 +7,7 @@ const useThemeHook = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const originTheme = React.useMemo(
     () =>
-      createTheme(adaptV4Theme({
+      createTheme({
         palette: {
           mode: prefersDarkMode ? 'dark' : 'light',
           // primary: {
@@ -17,7 +17,7 @@ const useThemeHook = () => {
             main: '#e91e63',
           },
         },
-      })),
+      }),
     [prefersDarkMode]
   );
 

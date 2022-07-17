@@ -1,16 +1,19 @@
-import { createTheme, Hidden, IconButton, adaptV4Theme } from '@mui/material';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded';
+import DehazeOutlinedIcon from '@mui/icons-material/DehazeOutlined';
+import {
+	createTheme, IconButton, useMediaQuery
+} from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import { Theme } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { useTheme } from '../../plugins/custom-mui-theme';
-import DehazeOutlinedIcon from '@mui/icons-material/DehazeOutlined';
 const Header = ({ showDrawerSwitch, onSwitchClick }) => {
   const { setTheme, theme } = useTheme();
+  const hidden = useMediaQuery((theme) => theme.breakpoints.up('md'));
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -42,38 +45,34 @@ const Header = ({ showDrawerSwitch, onSwitchClick }) => {
         >
           <Link to={'/'}>{data.site.siteMetadata.title}</Link>
         </Typography>
-        {showDrawerSwitch && (
-          <Hidden mdUp>
-            <IconButton
-              aria-label="sidebar"
-              sx={{ color: 'white' }}
-              onClick={() => {
-                onSwitchClick && onSwitchClick();
-              }}
-              size="large"
-            >
-              <DehazeOutlinedIcon />
-            </IconButton>
-          </Hidden>
+        {showDrawerSwitch && !hidden && (
+          <IconButton
+            aria-label="sidebar"
+            sx={{ color: 'white' }}
+            onClick={() => {
+              onSwitchClick && onSwitchClick();
+            }}
+            size="large"
+          >
+            <DehazeOutlinedIcon />
+          </IconButton>
         )}
         <IconButton
           aria-label="switch theme"
           sx={{ color: 'white' }}
           onClick={() => {
-            const newTheme = createTheme(
-              adaptV4Theme({
-                palette: {
-                  primary: {
-                    main: theme.palette.primary.main,
-                  },
-                  secondary: {
-                    main: theme.palette.secondary.main,
-                  },
-                  mode:
-                    (theme as Theme).palette.mode === 'dark' ? 'light' : 'dark',
+            const newTheme = createTheme({
+              palette: {
+                primary: {
+                  main: theme.palette.primary.main,
                 },
-              })
-            );
+                secondary: {
+                  main: theme.palette.secondary.main,
+                },
+                mode:
+                  (theme as Theme).palette.mode === 'dark' ? 'light' : 'dark',
+              },
+            });
             setTheme(newTheme);
           }}
           size="large"
