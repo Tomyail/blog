@@ -96,52 +96,57 @@ const BlogIndex = (props) => {
 
   const theme = useTheme();
   const [open, setOpen] = useState(false);
-  return <>
-    <Helmet title={siteTitle} />
-    <Header
-      showDrawerSwitch
-      onSwitchClick={() => {
-        setOpen((o) => !o);
-      }}
-    />
-    <Hidden lgDown>
-      <Box display="flex">
-        <Main {...props} />
-        <Drawer
-          variant="permanent"
-          anchor="right"
-          sx={{ width: 16 * 8, '& .MuiPaper-root': { width: 16 * 8 } }}
-        >
-          <Toolbar />
-          <Profile />
-        </Drawer>
-      </Box>
-    </Hidden>
-    <Hidden mdUp>
-      <Main {...props} />
-      <SwipeableDrawer
-        onClose={(event) => {
-          setOpen(false);
+  return (
+    <>
+      <Helmet title={siteTitle}>
+        <html lang="zh-Hans" />
+				<meta name="description" content="Helmet application" />
+      </Helmet>
+      <Header
+        showDrawerSwitch
+        onSwitchClick={() => {
+          setOpen((o) => !o);
         }}
-        onOpen={() => {
-          setOpen(true);
-        }}
-        open={open}
-        variant="temporary"
-        anchor="right"
-      >
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: theme.spacing(0, 1),
-          }}
-        >
-          <Profile />
+      />
+      <Hidden lgDown>
+        <Box display="flex">
+          <Main {...props} />
+          <Drawer
+            variant="permanent"
+            anchor="right"
+            sx={{ width: 16 * 8, '& .MuiPaper-root': { width: 16 * 8 } }}
+          >
+            <Toolbar />
+            <Profile />
+          </Drawer>
         </Box>
-      </SwipeableDrawer>
-    </Hidden>
-  </>;
+      </Hidden>
+      <Hidden mdUp>
+        <Main {...props} />
+        <SwipeableDrawer
+          onClose={(event) => {
+            setOpen(false);
+          }}
+          onOpen={() => {
+            setOpen(true);
+          }}
+          open={open}
+          variant="temporary"
+          anchor="right"
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              padding: theme.spacing(0, 1),
+            }}
+          >
+            <Profile />
+          </Box>
+        </SwipeableDrawer>
+      </Hidden>
+    </>
+  );
 };
 
 export default BlogIndex;

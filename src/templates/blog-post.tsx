@@ -22,7 +22,10 @@ class BlogPostTemplate extends React.Component {
     return (
       <Box>
         <Header />
-        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`}>
+          <html lang="zh-Hans" />
+          <meta name="description" content="Tomyail的个人博客" />
+        </Helmet>
         <PostBody
           post={post}
           previous={previous}

@@ -45,11 +45,13 @@ const Header = ({ showDrawerSwitch, onSwitchClick }) => {
         {showDrawerSwitch && (
           <Hidden mdUp>
             <IconButton
+              aria-label="sidebar"
               sx={{ color: 'white' }}
               onClick={() => {
                 onSwitchClick && onSwitchClick();
               }}
-              size="large">
+              size="large"
+            >
               <DehazeOutlinedIcon />
             </IconButton>
           </Hidden>
@@ -58,21 +60,24 @@ const Header = ({ showDrawerSwitch, onSwitchClick }) => {
           aria-label="switch theme"
           sx={{ color: 'white' }}
           onClick={() => {
-            const newTheme = createTheme(adaptV4Theme({
-              palette: {
-                primary: {
-                  main: theme.palette.primary.main,
+            const newTheme = createTheme(
+              adaptV4Theme({
+                palette: {
+                  primary: {
+                    main: theme.palette.primary.main,
+                  },
+                  secondary: {
+                    main: theme.palette.secondary.main,
+                  },
+                  mode:
+                    (theme as Theme).palette.mode === 'dark' ? 'light' : 'dark',
                 },
-                secondary: {
-                  main: theme.palette.secondary.main,
-                },
-                mode:
-                  (theme as Theme).palette.mode === 'dark' ? 'light' : 'dark',
-              },
-            }));
+              })
+            );
             setTheme(newTheme);
           }}
-          size="large">
+          size="large"
+        >
           {(theme as Theme).palette.mode === 'dark' ? (
             <Brightness7RoundedIcon /> //light
           ) : (

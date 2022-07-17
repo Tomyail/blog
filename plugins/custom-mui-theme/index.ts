@@ -10,9 +10,9 @@ const useThemeHook = () => {
       createTheme(adaptV4Theme({
         palette: {
           mode: prefersDarkMode ? 'dark' : 'light',
-          primary: {
-            main: '#1e88e5',
-          },
+          // primary: {
+          //   main: '#1e88e5',
+          // },
           secondary: {
             main: '#e91e63',
           },
