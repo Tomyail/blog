@@ -13,6 +13,7 @@ const PostPreview = ({ node }) => {
   const title = get(node, 'frontmatter.title') || node.fields.slug;
   const slug = get(node, 'frontmatter.path');
   const theme = useTheme();
+	console.log('theme', theme);
   return (
     <Box>
       <CardHeader

@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import PostBody from '../components/PostBody';
 
-
+// detail page
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
