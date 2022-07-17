@@ -1,7 +1,7 @@
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded';
 import DehazeOutlinedIcon from '@mui/icons-material/DehazeOutlined';
-import { createTheme, IconButton, useMediaQuery } from '@mui/material';
+import { IconButton, useMediaQuery } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import { Theme } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
