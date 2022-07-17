@@ -1,9 +1,7 @@
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7RoundedIcon from '@mui/icons-material/Brightness7Rounded';
 import DehazeOutlinedIcon from '@mui/icons-material/DehazeOutlined';
-import {
-	createTheme, IconButton, useMediaQuery
-} from '@mui/material';
+import { createTheme, IconButton, useMediaQuery } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import { Theme } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,7 +10,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { useTheme } from '../../plugins/custom-mui-theme';
 const Header = ({ showDrawerSwitch, onSwitchClick }) => {
-  const { setTheme, theme } = useTheme();
+  const { setIsDark, theme } = useTheme();
   const hidden = useMediaQuery((theme) => theme.breakpoints.up('md'));
   const data = useStaticQuery(graphql`
     query HeaderQuery {
@@ -61,19 +59,19 @@ const Header = ({ showDrawerSwitch, onSwitchClick }) => {
           aria-label="switch theme"
           sx={{ color: 'white' }}
           onClick={() => {
-            const newTheme = createTheme({
-              palette: {
-                // primary: {
-                //   main: theme.palette.primary.main,
-                // },
-                secondary: {
-                  main: theme.palette.secondary.main,
-                },
-                mode:
-                  (theme as Theme).palette.mode === 'dark' ? 'light' : 'dark',
-              },
-            });
-            setTheme(newTheme);
+            // const newTheme = createTheme({
+            //   palette: {
+            //     // primary: {
+            //     //   main: theme.palette.primary.main,
+            //     // },
+            //     secondary: {
+            //       main: theme.palette.secondary.main,
+            //     },
+            //     mode:
+            //       (theme as Theme).palette.mode === 'dark' ? 'light' : 'dark',
+            //   },
+            // });
+           setIsDark(theme.palette.mode === 'dark' ? false : true);
           }}
           size="large"
         >
