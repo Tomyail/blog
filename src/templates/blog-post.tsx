@@ -4,13 +4,11 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 // import Bio from '../components/Bio';
 import { Box } from '@mui/material';
-import withStyles from '@mui/styles/withStyles';
 import Divider from '../components/Divider';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import PostBody from '../components/PostBody';
 
-const styles = {};
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -39,7 +37,7 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default withStyles(styles)(BlogPostTemplate);
+export default (BlogPostTemplate);
 
 export const query = graphql`
   query BlogPostBySlug($path: String!) {

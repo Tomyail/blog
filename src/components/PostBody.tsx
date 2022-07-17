@@ -341,7 +341,12 @@ const PostBody = ({ post, previous, next, siteUrl, classes }) => {
           {tags && (
             <Box component="span">
               {tags.map((tag, idx) => (
-                <Chip key={idx} label={tag} variant="outlined"  sx={{margin:theme.spacing(0,'4px')  }}></Chip>
+                <Chip
+                  key={idx}
+                  label={tag}
+                  variant="outlined"
+                  sx={{ margin: theme.spacing(0, '4px') }}
+                ></Chip>
               ))}
             </Box>
           )}
@@ -396,6 +401,7 @@ const PostBody = ({ post, previous, next, siteUrl, classes }) => {
         <Disqus.DiscussionEmbed
           shortname={disqusShortname}
           config={disqusConfig}
+          theme={theme?.palette?.mode ?? 'light'}
         />
       </Box>
     </Container>
