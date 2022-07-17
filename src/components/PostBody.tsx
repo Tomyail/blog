@@ -6,7 +6,7 @@ import Link from 'gatsby-link';
 import truncate from 'lodash/truncate';
 import * as React from 'react';
 import 'typeface-roboto';
-import { Box, Button, Container, Fab, Typography } from '@mui/material';
+import { Box, Button, Chip, Container, Fab, Typography } from '@mui/material';
 import withStyles from '@mui/styles/withStyles';
 import withTheme from '@mui/styles/withTheme';
 import { ScrollTop } from './ScrollTop';
@@ -57,8 +57,8 @@ const style = (theme: Theme) => {
       },
 
       '& div[data-language]:before': {
-				fontWeight:500,
-        top: theme.spacing(-18/8),
+        fontWeight: 500,
+        top: theme.spacing(-18 / 8),
         color: '#6272a4',
         right: theme.spacing(2),
         zIndex: 1,
@@ -330,11 +330,21 @@ const PostBody = ({ post, previous, next, siteUrl, classes }) => {
         <Typography variant="h3" color={theme.palette.primary.main}>
           {post.frontmatter.title}
         </Typography>
-        <Box display="flex" justifyContent="space-between">
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          sx={{ margin: theme.spacing(1, 0) }}
+        >
           <Box component="span">
             {new Date(post.frontmatter.created_at).toLocaleDateString()}
           </Box>
-          <Box component="span">{tags.join(',')}</Box>
+          {tags && (
+            <Box component="span">
+              {tags.map((tag, idx) => (
+                <Chip key={idx} label={tag} variant="outlined"  sx={{margin:theme.spacing(0,'4px')  }}></Chip>
+              ))}
+            </Box>
+          )}
         </Box>
         <Box
           className={classes.content}
