@@ -21,7 +21,7 @@ export const wrapRootElement = ({ element }) => {
 const MaterialRoot = ({ children }) => {
   const { theme } = useTheme();
   return (
-    <StyledEngineProvider injectFirst>
+    <StyledEngineProvider>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {children}
