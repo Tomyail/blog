@@ -63,9 +63,9 @@ const Header = ({ showDrawerSwitch, onSwitchClick }) => {
           onClick={() => {
             const newTheme = createTheme({
               palette: {
-                primary: {
-                  main: theme.palette.primary.main,
-                },
+                // primary: {
+                //   main: theme.palette.primary.main,
+                // },
                 secondary: {
                   main: theme.palette.secondary.main,
                 },
