@@ -4,17 +4,19 @@ import parse from 'remark-parse';
 import stringify from 'remark-stringify';
 import frontmatter from 'remark-frontmatter';
 import { visit } from 'unist-util-visit';
-import { existsSync } from 'fs';
 import { basename, extname, resolve, join, relative, dirname } from 'path';
 import { format } from 'date-fns';
-
+import yaml from 'js-yaml';
 import fs from 'fs-extra';
+import debug from 'debug';
+
+const logger = debug('importFromLogseq');
 const configUnified = () => {
   return unified().use(parse).use(stringify).use(frontmatter, ['yaml']);
 };
 
 const fromRoot = '/Users/lixuexin03/logseq-mobile';
-const test = '/Users/lixuexin03/logseq-mobile/pages/PVE 安装和显卡直通设置.md';
+const test = '/Users/lixuexin03/logseq-mobile/pages/homelab 主机改造.md';
 const toRoot = '/Users/lixuexin03/source/personal/blog/src/pages/publish';
 
 configUnified()
@@ -23,17 +25,15 @@ configUnified()
     const title = basename(test, extname(test));
     const xx = `${format(new Date(), 'yyyy-MM-dd')}-${title}`;
     const floder = join(toRoot, xx);
-    console.log(floder);
+    logger(`dest dir ${floder}`);
     fs.mkdirp(floder);
+    file.data.title = title;
     file.data.destDir = floder;
   })
   .use(() => (tree, file) => {
-    console.log(file.data);
-    function visitor(node) {
+    function changeImgUrl(node) {
       const originUrl = resolve(dirname(test), node.url);
-
-      /* console.log(node, join(dirname(test), node.url)); */
-      if (existsSync(originUrl)) {
+      if (fs.existsSync(originUrl)) {
         fs.copyFileSync(
           originUrl,
           join(file.data.destDir, basename(originUrl))
@@ -42,13 +42,63 @@ configUnified()
       } else {
         throw new Error(JSON.stringify(node) + ',image not exist' + originUrl);
       }
-      // Sanitize URL by removing leading `/`
-      // const relativeUrl = node.url.replace(/^\//, '');
-
-      // node.url = new URL(relativeUrl, options.absolutePath).href;
     }
-    visit(tree, 'image', visitor);
+    visit(tree, 'image', changeImgUrl);
+
+    let idx = 0;
+    visit(tree, 'paragraph', (node) => {
+      // only first will be frontmatter
+      if (idx === 0) {
+        visit(node, 'text', (text) => {
+          const props = text.value.split('\n').reduce((acc, prop) => {
+            let [name, value] = prop.split(':: ');
+            logger(`found logseq property ${name}:${value}`);
+            if (name === 'tags') {
+              value = value.split(' ').map((str) => str.replace('#', ''));
+            }
+            acc[name] = value;
+            return acc;
+          }, {});
+          if (Object.keys(props).length) {
+            text.value = '';
+          }
+          file.data.props = props;
+        });
+        idx++;
+      }
+    });
+
+    idx = 0;
+    // remove logseq  topmost list
+    visit(tree, 'list', (node) => {
+      if (idx === 0) {
+        const flattenPrag = node.children
+          .map((listItem) => {
+            return listItem.children;
+          })
+          .filter((res) => res.length)
+          .flat(999);
+        tree.children.pop();
+        tree.children.push(...flattenPrag);
+        idx++;
+      }
+    });
+  })
+  // update fromtmatter
+  .use(() => (tree, file) => {
+    const frontmatter = {
+      title: file.data.title,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+      path: '/' + file.data.title,
+      tags: file.data.props.tags,
+    };
+
+    tree.children.unshift({ type: 'yaml', value: yaml.dump(frontmatter) });
   })
   .process(readSync(test), (err, file) => {
-    console.log(file, err);
+    fs.writeFileSync(
+      join(file.data.destDir, 'index.md'),
+      file.toString('utf8')
+    );
   });
