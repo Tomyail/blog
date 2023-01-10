@@ -58,7 +58,7 @@
   "devDependencies": {
     "gatsby-plugin-webpack-bundle-analyzer": "1.0.5",
     "gh-pages": "4.0.0",
-    "husky": "8.0.1",
+    "husky": "8.0.3",
     "js-yaml": "4.1.0",
     "klaw-sync": "6.0.0",
     "lint-staged": "13.0.3",
