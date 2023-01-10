@@ -23,6 +23,7 @@
     "gatsby-plugin-emotion": "7.24.0",
     "gatsby-plugin-feed": "4.24.0",
     "gatsby-plugin-google-analytics": "4.24.0",
+    "gatsby-plugin-google-gtag": "^4.16.0",
     "gatsby-plugin-lodash": "5.24.0",
     "gatsby-plugin-manifest": "4.24.0",
     "gatsby-plugin-material-ui": "4.1.0",
