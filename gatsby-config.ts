@@ -1,5 +1,5 @@
 import path from 'path';
-process.env.GATSBY_GIT_COMMIT= process.env.VERCEL_GIT_COMMIT_SHA || ""
+process.env.GATSBY_GIT_COMMIT = process.env.VERCEL_GIT_COMMIT_SHA || '';
 export default {
   siteMetadata: {
     title: 'Tomyail 的记忆现场',
@@ -72,11 +72,29 @@ export default {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: `UA-16492044-5`,
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          'G-JHCY0MVQ2W', // Google Analytics / GA
+        ],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Setting this parameter is also optional
+          respectDNT: true,
+          // Avoids sending pageview hits from custom paths
+          exclude: [],
+        },
       },
     },
+    /* { */
+    /*   resolve: `gatsby-plugin-google-analytics`, */
+    /*   options: { */
+    /*     trackingId: `UA-16492044-5`, */
+    /*   }, */
+    /* }, */
     {
       resolve: `gatsby-plugin-feed`,
       options: {
