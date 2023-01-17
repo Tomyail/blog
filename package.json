@@ -19,7 +19,7 @@
     "fs-extra": "10.1.0",
     "gatsby": "4.24.4",
     "gatsby-link": "4.24.1",
-    "gatsby-plugin-algolia": "0.26.0",
+    "gatsby-plugin-algolia": "1.0.3",
     "gatsby-plugin-emotion": "7.24.0",
     "gatsby-plugin-feed": "4.24.0",
     "gatsby-plugin-google-gtag": "^4.16.0",
