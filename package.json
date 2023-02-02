@@ -52,7 +52,7 @@
     "typeface-roboto": "1.1.13"
   },
   "devDependencies": {
-    "gh-pages": "4.0.0",
+    "gh-pages": "5.0.0",
     "husky": "8.0.3",
     "js-yaml": "4.1.0",
     "klaw-sync": "6.0.0",
