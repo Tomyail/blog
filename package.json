@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "author": "xuexin.li <tomyail1989@gmail.com>",
   "dependencies": {
-    "@emotion/react": "11.10.4",
-    "@emotion/styled": "11.10.4",
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
     "@mui/icons-material": "5.11.0",
     "@mui/material": "5.11.7",
     "@mui/styles": "5.11.7",
