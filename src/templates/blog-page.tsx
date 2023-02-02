@@ -116,7 +116,7 @@ export const query = graphql`
     }
     allMarkdownRemark(
       filter: { frontmatter: { visible: { ne: false } } }
-      sort: { fields: [frontmatter___created_at], order: DESC }
+      sort: { frontmatter: { created_at: DESC } }
       limit: $limit
       skip: $skip
     ) {

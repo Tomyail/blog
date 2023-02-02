@@ -10,7 +10,7 @@ const getAllPara = (graphql) =>
       {
         allMarkdownRemark(
           limit: 1000
-          sort: { fields: [frontmatter___created_at], order: DESC }
+          sort: { frontmatter: { created_at: DESC } }
         ) {
           totalCount
           edges {
@@ -37,9 +37,7 @@ const renderVisiblePost = (posts, createPage) => {
 
   const numberPages = Math.ceil(posts.length / postsPerPage);
 
-  const blogPost = path.resolve(
-    './src/templates/blog-post.tsx'
-  );
+  const blogPost = path.resolve('./src/templates/blog-post.tsx');
 
   Array.from({ length: numberPages }).forEach((_, i) => {
     createPage({
@@ -96,7 +94,7 @@ exports.createPages = ({ graphql, actions }) => {
           {
             allMarkdownRemark(
               limit: 1000
-              sort: { fields: [frontmatter___created_at], order: DESC }
+              sort: { frontmatter: { created_at: DESC } }
             ) {
               totalCount
               edges {
