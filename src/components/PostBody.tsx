@@ -7,8 +7,6 @@ import truncate from 'lodash/truncate';
 import * as React from 'react';
 import 'typeface-roboto';
 import { Box, Button, Chip, Container, Fab, Typography } from '@mui/material';
-import withStyles from '@mui/styles/withStyles';
-import withTheme from '@mui/styles/withTheme';
 import { ScrollTop } from './ScrollTop';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Divider from './Divider';

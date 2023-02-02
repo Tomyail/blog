@@ -59,19 +59,7 @@ const Header = ({ showDrawerSwitch, onSwitchClick }) => {
           aria-label="switch theme"
           sx={{ color: 'white' }}
           onClick={() => {
-            // const newTheme = createTheme({
-            //   palette: {
-            //     // primary: {
-            //     //   main: theme.palette.primary.main,
-            //     // },
-            //     secondary: {
-            //       main: theme.palette.secondary.main,
-            //     },
-            //     mode:
-            //       (theme as Theme).palette.mode === 'dark' ? 'light' : 'dark',
-            //   },
-            // });
-           setIsDark(theme.palette.mode === 'dark' ? false : true);
+            setIsDark(theme.palette.mode === 'dark' ? false : true);
           }}
           size="large"
         >

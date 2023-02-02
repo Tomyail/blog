@@ -1,44 +1,11 @@
 import _ from 'lodash';
-import Promise from 'bluebird';
 import path from 'path';
-import R from 'ramda';
-import fse from 'fs-extra';
-// 获取所有的文章概要信息
-const getAllPara = (graphql) =>
-  graphql(
-    `
-      {
-        allMarkdownRemark(
-          limit: 1000
-          sort: { frontmatter: { created_at: DESC } }
-        ) {
-          totalCount
-          edges {
-            node {
-              frontmatter {
-                title
-                path
-                tags
-              }
-            }
-          }
-        }
-      }
-    `
-  );
+import type { GatsbyNode } from 'gatsby';
 
-//根据 tag 分组的信息
-const groupByTags = () => {};
-
-// 根据 Area 分组的信息 （暂时还没有）
-const groupByAreas = () => {};
 const renderVisiblePost = (posts, createPage) => {
   const postsPerPage = 9;
-
   const numberPages = Math.ceil(posts.length / postsPerPage);
-
   const blogPost = path.resolve('./src/templates/blog-post.tsx');
-
   Array.from({ length: numberPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/` : `/pages/${i + 1}`,
@@ -70,23 +37,11 @@ const renderVisiblePost = (posts, createPage) => {
   });
 };
 
-//我们把 fromtmatter 的 visible 是 false 的文章从文章列表中删掉,但是如果用户直接访问那个 url 还是能访问到的
-const isVisible = (post) => {
-  return post.node.frontmatter.visible !== false;
-};
-
-//const renderInvisiblePosts = (posts, createPage, blogPost) => {
-//posts.forEach((post, index) => {
-//createPage({
-//path: post.node.frontmatter.path,
-//component: blogPost,
-//});
-//});
-//};
-
-exports.createPages = ({ graphql, actions }) => {
+export const createPages: GatsbyNode['createPages'] = ({
+  graphql,
+  actions,
+}) => {
   const { createPage } = actions;
-
   return new Promise((resolve, reject) => {
     resolve(
       graphql(
@@ -94,6 +49,7 @@ exports.createPages = ({ graphql, actions }) => {
           {
             allMarkdownRemark(
               limit: 1000
+              filter: { frontmatter: { visible: { ne: false } } }
               sort: { frontmatter: { created_at: DESC } }
             ) {
               totalCount
@@ -113,20 +69,14 @@ exports.createPages = ({ graphql, actions }) => {
         if (result.errors) {
           reject(result.errors);
         }
-
         // Create blog posts pages.
         const posts = result.data.allMarkdownRemark.edges;
-
-        const visiblePosts = R.filter(isVisible)(posts);
-        renderVisiblePost(visiblePosts, createPage);
-        //const invisiblePosts = R.filter(R.compose(R.not, isVisible))(posts);
-        //renderInvisiblePosts(invisiblePosts, createPage, blogPost);
+        renderVisiblePost(posts, createPage);
       })
     );
   });
 };
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {

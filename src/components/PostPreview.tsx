@@ -1,5 +1,4 @@
 import { Box, CardHeader, Typography, useTheme } from '@mui/material';
-// import { Link } from 'reach';
 import { Link } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
