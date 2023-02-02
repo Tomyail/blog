@@ -13,7 +13,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { graphql } from 'gatsby';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import get from 'lodash/get';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
@@ -116,7 +116,7 @@ export const query = graphql`
     }
     allMarkdownRemark(
       filter: { frontmatter: { visible: { ne: false } } }
-      sort: { fields: [frontmatter___created_at], order: DESC }
+      sort: { frontmatter: { created_at: DESC } }
       limit: $limit
       skip: $skip
     ) {

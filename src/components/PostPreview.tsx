@@ -1,12 +1,12 @@
 import { Box, CardHeader, Typography, useTheme } from '@mui/material';
 // import { Link } from 'reach';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import get from 'lodash/get';
 import React from 'react';
 
 const PostPreview = ({ node }) => {
   const {
-    frontmatter: {  tags = [] },
+    frontmatter: { tags = [] },
   } = node;
   if (!tags) {
   }
@@ -28,7 +28,9 @@ const PostPreview = ({ node }) => {
             <div>{title}</div>
           </Link>
         }
-        subheader={`${new Date(node.frontmatter.created_at).toLocaleDateString()} | ${node.timeToRead} min read`}
+        subheader={`${new Date(
+          node.frontmatter.created_at
+        ).toLocaleDateString()} | ${node.timeToRead} min read`}
       />
       <Box>
         <Typography paragraph variant="body1">

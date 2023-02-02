@@ -125,8 +125,8 @@ export default {
             query: `
 				{
 				  allMarkdownRemark(
-					limit: 1000,
-					sort: { order: DESC, fields: [frontmatter___created_at] },
+					limit: 1000
+              sort: { frontmatter: { created_at: DESC } }
 				  ) {
 					edges {
 					  node {

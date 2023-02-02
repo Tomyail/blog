@@ -2,7 +2,7 @@ import { styled, Theme, useTheme } from '@mui/material/styles';
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import Disqus from 'disqus-react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import truncate from 'lodash/truncate';
 import * as React from 'react';
 import 'typeface-roboto';
@@ -286,7 +286,6 @@ const Content = styled(Box)(({ theme }) => ({
     // fontStyle: ,
   },
 }));
-
 
 const PostBody = ({ post, previous, next, siteUrl }) => {
   const disqusShortname = 'tomyail';
