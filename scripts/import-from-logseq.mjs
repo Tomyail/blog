@@ -1,3 +1,11 @@
+#!/usr/bin/env zx
+
+const error = chalk.red;
+if (!argv._[0]) {
+  console.log(error('请输入 markdown 路径'));
+  process.exit(1);
+}
+
 import { readSync } from 'to-vfile';
 import { unified } from 'unified';
 import parse from 'remark-parse';
@@ -9,14 +17,17 @@ import { format } from 'date-fns';
 import yaml from 'js-yaml';
 import fs from 'fs-extra';
 import debug from 'debug';
+import autocorrect from 'autocorrect-node';
+import prettier from 'prettier';
+import pangu from 'pangu';
 
 const logger = debug('importFromLogseq');
 const configUnified = () => {
   return unified().use(parse).use(stringify).use(frontmatter, ['yaml']);
 };
 
+const test = argv._[0];
 const fromRoot = '/Users/lixuexin03/logseq-mobile';
-const test = '/Users/lixuexin03/logseq-mobile/pages/homelab 主机改造.md';
 const toRoot = '/Users/lixuexin03/source/personal/blog/src/pages/publish';
 
 configUnified()
@@ -97,8 +108,9 @@ configUnified()
     tree.children.unshift({ type: 'yaml', value: yaml.dump(frontmatter) });
   })
   .process(readSync(test), (err, file) => {
-    fs.writeFileSync(
-      join(file.data.destDir, 'index.md'),
-      file.toString('utf8')
+    const markdown = file.toString('utf8');
+    const formatted = autocorrect.format(
+      prettier.format(markdown, { filepath: test })
     );
+    fs.writeFileSync(join(file.data.destDir, 'index.md'), formatted);
   });
