@@ -101,7 +101,7 @@ configUnified()
       title: file.data.title,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
-      path: '/' + file.data.title,
+      path: '/' + file.data.title +'/',
       tags: file.data.props.tags,
     };
 
