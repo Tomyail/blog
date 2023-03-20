@@ -16,7 +16,7 @@
     "date-fns": "^2.29.3",
     "debug": "^4.3.4",
     "disqus-react": "1.1.5",
-    "fs-extra": "10.1.0",
+    "fs-extra": "11.1.1",
     "gatsby": "5.6.0",
     "gatsby-plugin-emotion": "8.6.0",
     "gatsby-plugin-feed": "5.6.0",
