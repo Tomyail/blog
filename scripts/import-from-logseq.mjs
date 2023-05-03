@@ -20,6 +20,8 @@ import debug from 'debug';
 import autocorrect from 'autocorrect-node';
 import prettier from 'prettier';
 import pangu from 'pangu';
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 const logger = debug('importFromLogseq');
 const configUnified = () => {
@@ -27,8 +29,8 @@ const configUnified = () => {
 };
 
 const test = argv._[0];
-const fromRoot = '/Users/lixuexin03/logseq-mobile';
-const toRoot = '/Users/lixuexin03/source/personal/blog/src/pages/publish';
+const fromRoot = process.env.BLOG_LOGSEQ_FROM ?? '/Users/lixuexin03/logseq-mobile';
+const toRoot = process.env.BLOG_LOGSEQ_TO ?? '/Users/lixuexin03/source/personal/blog/src/pages/publish';
 
 configUnified()
   .use(() => (tree, file) => {
@@ -101,13 +103,14 @@ configUnified()
       title: file.data.title,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
-      path: '/' + file.data.title +'/',
+      path: '/' + file.data.title + '/',
       tags: file.data.props.tags,
     };
 
     tree.children.unshift({ type: 'yaml', value: yaml.dump(frontmatter) });
   })
   .process(readSync(test), (err, file) => {
+    console.log(`${file}`)
     const markdown = file.toString('utf8');
     const formatted = autocorrect.format(
       prettier.format(markdown, { filepath: test })
