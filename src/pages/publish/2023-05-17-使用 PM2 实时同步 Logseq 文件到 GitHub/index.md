@@ -1,5 +1,5 @@
 ---
-title: 使用 PM2 实现 Logseq 文件实时同步到 GitHub
+title: 使用 PM2 实时同步 Logseq 文件到 GitHub
 created_at: "2023-05-17T08:21:06.522Z"
 updated_at: "2023-05-17T08:21:06.522Z"
 path: /realtime-sync-logseq-to-github-using-pm2/
