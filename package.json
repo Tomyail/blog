@@ -59,7 +59,7 @@
     "js-yaml": "4.1.0",
     "klaw-sync": "6.0.0",
     "lint-staged": "13.1.0",
-    "prettier": "2.8.3",
+    "prettier": "2.8.8",
     "remark-frontmatter": "4.0.1",
     "remark-parse": "10.0.1",
     "remark-stringify": "10.0.2",
