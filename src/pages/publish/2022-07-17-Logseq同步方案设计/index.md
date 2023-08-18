@@ -37,6 +37,8 @@ gitdir: /Users/xxx/.logseq/git/yyy/.git
 - 在 MacMini 在定义两个 crontab 任务，用来定期执行 [unison](https://www.cis.upenn.edu/~bcpierce/unison/index.html) 和 [git-sync](https://github.com/simonthum/git-sync)
   ![3](./3.svg)
 
+> 开启iCloud 同步需要 [关闭 mac 上面的优化存储功能](https://support.apple.com/zh-cn/guide/mac-help/sysp4ee93ca4/mac),否则 iCloud 可能不会全量同步,而是只保留一个 `.icloud` 文件. 当然也有强制下载 .icloud 文件的[方法](https://apple.stackexchange.com/questions/328329/is-there-a-way-via-the-command-line-to-cause-icloud-files-to-download), 不嫌麻烦的可以自己加料~
+
 # 如何设置
 
 使用 iCloud 的设备不同设置，主要的设置在作为中转服务器的 Mac mini 上面
