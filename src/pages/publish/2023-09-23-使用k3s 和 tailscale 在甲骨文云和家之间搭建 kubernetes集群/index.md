@@ -1,8 +1,8 @@
 ---
 title: 使用 k3s 和 tailscale 在甲骨文云和家之间搭建 kubernetes 集群
 path: /using-k3s-and-tailscale-to-build-kubernets-cluster-between-oraclecloud-and-home/
-created_at: 2023-09-22T15:12:34.318Z
-updated_at: 2023-09-23T05:18:22.095Z
+created_at: 2023-09-23T05:24:32.462Z
+updated_at: 2023-09-24T09:21:51.371Z
 tags: [k8s,linux]
 ---
 
@@ -125,17 +125,13 @@ vpn-auth: "name=tailscale,joinKey=${TAILSCALE_TOKEN}"
 ![image.png](image_1694744860007_0.png)
 
 
-\#+BEGIN_TIP
-开放所有端口并不是一个好的安全实践，更好的方式应该是将 k3s [用到的所有端口](https://docs.k3s.io/installation/requirements?_highlight=port#inbound-rules-for-k3s-server-nodes) 单独加入白名单，不过本着先有再优的原则，我们目前没这么做。
-\#+END_TIP
+> 开放所有端口并不是一个好的安全实践，更好的方式应该是将 k3s [用到的所有端口](https://docs.k3s.io/installation/requirements?_highlight=port#inbound-rules-for-k3s-server-nodes) 单独加入白名单，不过本着先有再优的原则，我们目前没这么做。
 
 
 2.  ssh 登陆到虚拟机，删除 ubuntu iptable 加载器，升级 iptable 并重启
 
 
-\#+BEGIN_TIP
-可选操作，目的是为了最大程度排除 iptable 各种设定可能导致的集群节点相互之间的通信失败，而且 k3s 对 iptable 的版本也有[一定的要求](https://docs.k3s.io/known-issues?_highlight=iptab#iptables)。当然这个设定可能会降低系统的安全性，如果你是安全专家或者 iptables 大佬，可自行决定是否
-\#+END_TIP
+> 可选操作，目的是为了最大程度排除 iptable 各种设定可能导致的集群节点相互之间的通信失败，而且 k3s 对 iptable 的版本也有[一定的要求](https://docs.k3s.io/known-issues?_highlight=iptab#iptables)。当然这个设定可能会降低系统的安全性，如果你是安全专家或者 iptables 大佬，可自行决定是否
 
     apt-get remove iptables-persistant
 
@@ -296,18 +292,16 @@ Accept: */*
 ```
 
 
-\#+BEGIN_TIP
-能在 server 上直接 curl 这几个子网 ip，而不用在 pod 内部 curl 的原因是 tailscale 路由了子网，具体可以通过命令` ip route show table all` 确认。里面有类似下面的就是正确的：
-
-    pi@raspberrypi:~ $ ip route show table all
-    10.42.0.0/24 dev tailscale0 table 52
-    10.42.1.0/24 dev tailscale0 table 52
-    10.42.2.0/24 dev tailscale0 table 52
-    10.42.3.0/24 dev tailscale0 table 52
-    10.42.4.0/24 dev tailscale0 table 52
-
-这里的这几个 10.42.x.0/24, 就是我上面没个 node 的分配的子网
-\#+END_TIP
+> 能在 server 上直接 curl 这几个子网 ip，而不用在 pod 内部 curl 的原因是 tailscale 路由了子网，具体可以通过命令` ip route show table all` 确认。里面有类似下面的就是正确的：
+> 
+>     pi@raspberrypi:~ $ ip route show table all
+>     10.42.0.0/24 dev tailscale0 table 52
+>     10.42.1.0/24 dev tailscale0 table 52
+>     10.42.2.0/24 dev tailscale0 table 52
+>     10.42.3.0/24 dev tailscale0 table 52
+>     10.42.4.0/24 dev tailscale0 table 52
+> 
+> 这里的这几个 10.42.x.0/24, 就是我上面没个 node 的分配的子网
 
 
 ## 六：安装 k8s 图形化管理工具 Lens
@@ -512,6 +506,3 @@ vpn-auth: "name=tailscale,joinKey={{TAILSCALE_TOKEN}}"
 
 
 最后在命令行执行 `ansible-playbook -i hosts.ini install-k3s-agent.yaml`
-
-
-
