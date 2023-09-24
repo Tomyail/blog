@@ -2,20 +2,20 @@
 title: 使用 k3s 和 tailscale 在甲骨文云和家之间搭建 kubernetes 集群
 path: /using-k3s-and-tailscale-to-build-kubernets-cluster-between-oraclecloud-and-home/
 created_at: 2023-09-23T05:24:32.462Z
-updated_at: 2023-09-24T09:21:51.371Z
+updated_at: 2023-09-24T15:31:24.773Z
 tags: [k8s,linux]
 ---
 
 最近一直在学习 [kubernetes](https://kubernetes.io/zh-cn/)（k8s）相关的知识，为了实践学到的知识，选用了 [k3s](https://docs.k3s.io/zh/) 作为实际部署集群的工具，已经为位于美国的四台虚拟机搭建了一个集群，这四台虚拟机中将一台 2 核 3G 的作为 server，满足了 k3s 的最低硬件要求，目前工作良好。
 
 
-![image.png](image_1694936826428_0.png)
+![image.png](./image_1694936826428_0.png)
 
 
 有了这次成功经验之后，想将位于日本和韩国的甲骨文虚拟机也组成一个集群。 这样子就能更加方便的部署应用，而不用每次手动记住自己的应用部署用 docker compose 在哪一台机器上运行着。经过几天的折腾，发现这几台免费送的虚拟机，不能作为 k3s server 来稳定运行，只要一运行 server，就连 `journalctl -f` 看日志都卡。通过 grafana 监控收集的数据分析后发现运行 server 后，io 读写就暴涨，怀疑是硬盘太差引起的。
 
 
-![image.png](image_1694766570827_0.png)
+![image.png](./image_1694766570827_0.png)
 
 
 尝试调整 `vm.swappiness=10` 降低将内存数据写入硬盘的倾向，过段时间 swap 直接满了，最后尝试彻底关闭 swap，依然没有明显的改善，在本机命令行执行 `kubectl get node` 都是半天才响应。
@@ -24,7 +24,7 @@ tags: [k8s,linux]
 而作为对比，隔壁另一台相同配置的虚拟机，闲置的时候资源基本没什么波动，颇有一种打工人在摸鱼的感觉。
 
 
-![image.png](image_1694766747795_0.png)
+![image.png](./image_1694766747795_0.png)
 
 
 看来直接在甲骨文虚拟机上面建立带 server 的集群有点难为 1 核 1G 的性能，毕竟是免费送的服务器。
@@ -46,7 +46,7 @@ tailscale 作为内网穿透利器，有很多免费的[中继服务器](https:/
 server 位于家中，作为集群的控制中心。通过 [pve 的模版](https://tcude.net/creating-a-vm-template-in-proxmox/) 快速创建了一个操作系统，我安装的是 ubuntu 22。
 
 
-![image.png](image_1694939459188_0.png)
+![image.png](./image_1694939459188_0.png)
 
 
 安装完系统之后，ssh 进入创建的虚拟机。然后执行下面的步骤：
@@ -104,7 +104,7 @@ vpn-auth: "name=tailscale,joinKey=${TAILSCALE_TOKEN}"
 1.  通过 `sudo kubectl describe node k3s-jp-home-server`查看这个节点的细节信息，留意里面的 ip，我这里获取到的 IP 是 100.91.43.90：
 
 
-![image.png](image_1694943392562_0.png)
+![image.png](./image_1694943392562_0.png)
 
 
 2.  获取当前 tailscale 的节点的 IP：`sudo tailscale status` 找到这台刚刚注册的这台机器的 ip，不出意外的话这个 ip 就是上面截图的 ip。我们将这个 IP 记做 `TAILSCALE_IP`
@@ -122,7 +122,7 @@ vpn-auth: "name=tailscale,joinKey=${TAILSCALE_TOKEN}"
 1.  进入甲骨文云管理后台，新建一条规则，允许所有协议（相当于关闭了防火墙）
 
 
-![image.png](image_1694744860007_0.png)
+![image.png](./image_1694744860007_0.png)
 
 
 > 开放所有端口并不是一个好的安全实践，更好的方式应该是将 k3s [用到的所有端口](https://docs.k3s.io/installation/requirements?_highlight=port#inbound-rules-for-k3s-server-nodes) 单独加入白名单，不过本着先有再优的原则，我们目前没这么做。
@@ -181,13 +181,13 @@ curl -sfL https://get.k3s.io | K3S_URL=${K3S_URL} K3S_TOKEN=${K3S_TOKEN} sh -
 同时通过 `sudo kubectl describe node instance-20220922-2113 ` 查看加入的 agent 的 ip，应该是 tailscale 提供的 ip 范围（[100.64.0.0/10](https://tailscale.com/kb/1015/100.x-addresses/)）而不是甲骨文的内网 ip（比如 10.0.0.x）
 
 
-![image.png](image_1695225391649_0.png)
+![image.png](./image_1695225391649_0.png)
 
 
 按照上述方法把自己剩下的甲骨文加到这个集群后的效果：
 
 
-![image.png](image_1694692634196_0.png)
+![image.png](./image_1694692634196_0.png)
 
 
 到这里，我们就把所有的免费甲骨文加到集群里面去了。
@@ -313,7 +313,7 @@ Accept: */*
 > 将 `/etc/rancher/k3s/k3s.yaml` 复制到位于集群外部的主机上的 `~/.kube/config`。然后，将 `server` 字段的值替换为你 K3s Server 的 IP 或名称。现在，你可以使用 `kubectl` 来管理 K3s 集群。
 
 
-![image.png](image_1695225018510_0.png)
+![image.png](./image_1695225018510_0.png)
 
 
 ## 七：最终的效果
@@ -343,19 +343,19 @@ Accept: */*
 然后 [uptime-kuma](https://github.com/louislam/uptime-kuma) 加了一个 http 监控，从家里检测到的数据：
 
 
-![image.png](image_1694838428202_0.png)
+![image.png](./image_1694838428202_0.png)
 
 
 从美国集群的到监控数据
 
 
-![image.png](image_1694838411388_0.png)
+![image.png](./image_1694838411388_0.png)
 
 
 来一个全国测速图
 
 
-![image.png](image_1694838589853_0.png)
+![image.png](./image_1694838589853_0.png)
 
 
 总体来说马马虎虎，不过基本能用，唯一的问题是 http 的延迟不稳定，一会 300ms 以内一会能到 5 秒。
@@ -384,7 +384,7 @@ k3s 默认的  [ServiceLB](https://github.com/k3s-io/klipper-lb) (之前叫 Kl
 简单测试了一下这三个方位的 ping 延迟，这一来一去就无故增加了 200 多 ms，而且家里到国外通过 tailscale 的连接本身也不是特别稳定，这也加剧了网络的波动。
 
 
-![WX20230915-150321@2x.png](WX20230915-150321@2x_1694761697364_0.png)
+![WX20230915-150321@2x.png](./WX20230915-150321@2x_1694761697364_0.png)
 
 
 最后的临时解决方案就是位于家里的 server 基本不运行 pod，将 traefik 放到位于日本的服务器上面，这样流量基本就在日本和韩国的这几台服务器之间流转了。
@@ -417,13 +417,13 @@ wrk 的数据居然变差了，没想明白原因。
 家里 uptime 的数据，可以看到 09-19 之后，延迟的波动瞬间下来了，切换后响应时间基本在 1s 以内。
 
 
-![image.png](image_1695105501695_0.png)
+![image.png](./image_1695105501695_0.png)
 
 
 从美国的集群的到的数据和家里一致，请求的延迟波动瞬间稳定了。
 
 
-![image.png](image_1695105379075_0.png)
+![image.png](./image_1695105379075_0.png)
 
 
 ## 总结：
