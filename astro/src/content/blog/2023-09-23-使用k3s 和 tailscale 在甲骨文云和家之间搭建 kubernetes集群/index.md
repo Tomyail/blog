@@ -6,6 +6,7 @@ updated_at: 2023-09-24T15:31:24.773Z
 tags: [k8s,linux]
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jul 08 2022'
+slug: using-k3s-and-tailscale-to-build-kubernets-cluster-between-oraclecloud-and-home
 ---
 
 最近一直在学习 [kubernetes](https://kubernetes.io/zh-cn/)（k8s）相关的知识，为了实践学到的知识，选用了 [k3s](https://docs.k3s.io/zh/) 作为实际部署集群的工具，已经为位于美国的四台虚拟机搭建了一个集群，这四台虚拟机中将一台 2 核 3G 的作为 server，满足了 k3s 的最低硬件要求，目前工作良好。
