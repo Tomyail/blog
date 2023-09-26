@@ -29,7 +29,6 @@ mapMakrdowns({
     const nodes = getNoLangNodes(file);
 
     if (nodes && nodes.length) {
-      console.log('ss');
       nodes.forEach((node) => {
         repaceLang(title, node, code);
       });

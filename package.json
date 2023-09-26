@@ -2,6 +2,7 @@
   "name": "blog.tomyail.com",
   "description": "tomyail's homepage",
   "version": "1.0.0",
+   "type": "module",
   "author": "xuexin.li <tomyail1989@gmail.com>",
   "dependencies": {
     "@emotion/react": "11.10.5",
