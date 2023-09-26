@@ -15,7 +15,8 @@ export default defineConfig({
       }
     })
   ],
-  image: {
-    service: squooshImageService(),
-  },
+  /* image: { */
+  /*   //not support gif */
+  /*   service: squooshImageService(), */
+  /* }, */
 });
