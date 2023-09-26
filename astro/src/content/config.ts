@@ -6,8 +6,8 @@ const blog = defineCollection({
 		title: z.string(),
 		// description: z.string(),
 		// Transform string to Date object
-		// pubDate: z.coerce.date(),
-		updatedDate: z.coerce.date().optional(),
+		 created_at: z.coerce.date(),
+		updated_at: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 	}),
 });

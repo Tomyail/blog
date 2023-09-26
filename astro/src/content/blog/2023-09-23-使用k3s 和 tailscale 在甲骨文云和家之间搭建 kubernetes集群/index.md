@@ -5,7 +5,6 @@ created_at: 2023-09-23T05:24:32.462Z
 updated_at: 2023-09-24T15:31:24.773Z
 tags: [k8s,linux]
 description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
 slug: using-k3s-and-tailscale-to-build-kubernets-cluster-between-oraclecloud-and-home
 ---
 
@@ -296,14 +295,14 @@ Accept: */*
 
 
 > 能在 server 上直接 curl 这几个子网 ip，而不用在 pod 内部 curl 的原因是 tailscale 路由了子网，具体可以通过命令` ip route show table all` 确认。里面有类似下面的就是正确的：
-> 
+>
 >     pi@raspberrypi:~ $ ip route show table all
 >     10.42.0.0/24 dev tailscale0 table 52
 >     10.42.1.0/24 dev tailscale0 table 52
 >     10.42.2.0/24 dev tailscale0 table 52
 >     10.42.3.0/24 dev tailscale0 table 52
 >     10.42.4.0/24 dev tailscale0 table 52
-> 
+>
 > 这里的这几个 10.42.x.0/24, 就是我上面没个 node 的分配的子网
 
 
