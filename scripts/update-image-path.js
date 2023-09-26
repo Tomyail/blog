@@ -1,15 +1,11 @@
-const { mapMakrdowns } = require('./markdown-support');
-const path = require('path');
-const yaml = require('js-yaml');
-const vfile = require('to-vfile');
-
-import { mapMakrdowns } from './markdown-support';
+import { mapMakrdowns } from './markdown-support.js';
 import path from 'path';
 import yaml from 'js-yaml';
-import vfile from 'to-vfile';
+import { writeSync } from 'to-vfile';
+import * as url from 'url';
+import { visit } from 'unist-util-visit'
 
-const getImages= (file) =>
-  file.children.filter((x) => x.type === 'image' );
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 mapMakrdowns({
   inputDir: path.join(__dirname, '..', 'astro/src/content/blog'),
@@ -19,23 +15,21 @@ mapMakrdowns({
       return [false, file];
     }
 
-    const frontmatter = yaml.load(file.children[0].value);
-    const title = frontmatter.title;
-
-    const nodes =getImages(file);
-
-    if (nodes && nodes.length) {
-      console.log(nodes)
-      /* nodes.forEach((node) => { */
-      /*   repaceLang(title, node, code); */
-      /* }); */
-      /**/
-      /* return [true, file]; */
-      return [false,file]
+    let hasFind = false
+    visit(file, "image", node => {
+      const isRemoteUrl = node.url.startsWith('http')
+      const isRelativeUrl = node.url.startsWith('.')
+      if (!(isRemoteUrl || isRelativeUrl)) {
+        node.url = `./${node.url}`
+        hasFind = true
+      }
+    })
+    if (hasFind) {
+      return [true, file]
     }
 
     return [false, file];
   },
 }).subscribe((x) => {
-  vfile.writeSync(x.content);
+  writeSync(x.content);
 });

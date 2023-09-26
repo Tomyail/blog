@@ -16,13 +16,13 @@ updated_at: 2020-05-28T14:10:59.333Z
 
 >
 
-- An API for asynchronous programming
-  with observable **streams**. （利用 observable 流为异步编程设计的一套 API）
-- RxJS is a library for **reactive programming** using **Observables**, to make it easier to compose **asynchronous** or **callback-based** code.（RxJS 是为响应式编程设计的库，它利用 Observables 模式方便我们编写基于异步组合或者回调的代码）
-- **[ReactiveX](http://reactivex.io/)** combines the **[Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)** with the **[Iterator pattern](https://en.wikipedia.org/wiki/Iterator_pattern)** and **[functional programming](http://martinfowler.com/articles/collection-pipeline/#NestedOperatorExpressions)** with collections to fill the need for an ideal way of managing **sequences of events**.（ReactiveX 利用迭代器和观察者模式，函数式编程集合来优雅的编写和管理事件序列代码）
-- Think of RxJS as **Lodash for events**.（RxJS 就是事件版本的 lodash）
+*   An API for asynchronous programming
+    with observable **streams**. （利用 observable 流为异步编程设计的一套 API）
+*   RxJS is a library for **reactive programming** using **Observables**, to make it easier to compose **asynchronous** or **callback-based** code.（RxJS 是为响应式编程设计的库，它利用 Observables 模式方便我们编写基于异步组合或者回调的代码）
+*   **[ReactiveX](http://reactivex.io/)** combines the **[Observer pattern](https://en.wikipedia.org/wiki/Observer_pattern)** with the **[Iterator pattern](https://en.wikipedia.org/wiki/Iterator_pattern)** and **[functional programming](http://martinfowler.com/articles/collection-pipeline/#NestedOperatorExpressions)** with collections to fill the need for an ideal way of managing **sequences of events**.（ReactiveX 利用迭代器和观察者模式，函数式编程集合来优雅的编写和管理事件序列代码）
+*   Think of RxJS as **Lodash for events**.（RxJS 就是事件版本的 lodash）
 
-完全没接触过 RxJS 的人一上来学这个库，可能会一脸懵逼，因为这个库提出了很多前端可能没有接触过的概念。首先说明下 RxJS 并不是 Javascript 独有的一个库，它是 Reactive extensions(Rx) 的特定语言实现版本。因此掌握了 RxJS 的思想，其实就是掌握了响应式编程的思想。Reactive extensions [最早](<https://docs.microsoft.com/en-us/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)?redirectedfrom=MSDN>)可能是微软在 .net 框架作为响应式编程的一种特定实现提出来的。**它的最大目的是提供一系列抽象的操作符可以对数据进行转换，而不管这些数据来源是同步或异步的**。
+完全没接触过 RxJS 的人一上来学这个库，可能会一脸懵逼，因为这个库提出了很多前端可能没有接触过的概念。首先说明下 RxJS 并不是 Javascript 独有的一个库，它是 Reactive extensions(Rx) 的特定语言实现版本。因此掌握了 RxJS 的思想，其实就是掌握了响应式编程的思想。Reactive extensions [最早](https://docs.microsoft.com/en-us/previous-versions/dotnet/reactive-extensions/hh242985\(v=vs.103\)?redirectedfrom=MSDN)可能是微软在 .net 框架作为响应式编程的一种特定实现提出来的。**它的最大目的是提供一系列抽象的操作符可以对数据进行转换，而不管这些数据来源是同步或异步的**。
 
 ## 第二部分 概念和应用
 
@@ -38,13 +38,13 @@ updated_at: 2020-05-28T14:10:59.333Z
 
 举个例子, 下图展示的 promise 和 dom 事件就是流的不同展示。
 
-![promiseandevent](media/15896120921996/promiseandevent.png)
+![promiseandevent](./media/15896120921996/promiseandevent.png)
 
 流的概念具体在 rxjs 里面，就是 Observerable 和 Observer 的关系，
 
 如下图所示：
 
-![](media/15896120921996/15896342175912.jpg)
+![](./media/15896120921996/15896342175912.jpg)
 
 <center><a href='https://www.manning.com/books/rxjs-in-action'>图片来源</a></center>
 
@@ -58,22 +58,22 @@ updated_at: 2020-05-28T14:10:59.333Z
 
 由于 Observable 的创建方式和 Promise 有点像，因为用他们做对比学习可能效果更好。
 
-- 典型的 promise 的流程：
+*   典型的 promise 的流程：
 
-![](media/15896120921996/15902212430711.jpg)
+![](./media/15896120921996/15902212430711.jpg)
 
 <center><a href='https://www.manning.com/books/rxjs-in-action'>图片来源</a></center>
 
 promise 是一次性的，在异步任务执行完毕后，promise 就被标记为 fullfilled 或者 rejected 状态。
 
-- 典型的 Observable
-  ![](media/15896120921996/15902214700504.jpg)
+*   典型的 Observable
+    ![](./media/15896120921996/15902214700504.jpg)
 
 <center><a href='https://www.manning.com/books/rxjs-in-action'>图片来源</a></center>
 
 Observable 不是一次性的，在异步任务中可以通过 next 多次触发。只有收到 error 或者 complete，订阅才会结束。
 
-- 对比 Promise 和 Observable
+*   对比 Promise 和 Observable
 
 |               | Promise | Event | Observable |
 | :------------ | :------ | :---- | :--------- |
@@ -310,7 +310,7 @@ of(1, 2, 3, 4, 5)
 timer(2000).subscribe(console.log);
 ```
 
-![](media/15896120921996/15903242545734.jpg)
+![](./media/15896120921996/15903242545734.jpg)
 
 <center><a href='https://www.manning.com/books/rxjs-in-action'>图片来源</a></center>
 
@@ -359,14 +359,14 @@ of(1, 2, 3, 4, 5)
 
 在介绍操作符之前，先看一下官网推荐的学习操作符的方式：弹珠图。
 
-![](media/15896120921996/15905034917491.jpg)
+![](./media/15896120921996/15905034917491.jpg)
 
 推荐几个网站：
 
-- [操作符决策树](https://rxjs-dev.firebaseapp.com/operator-decision-tree)
-- [用动画展示一些容易混淆的操作符的区别](https://reactive.how/)
-- [用例子解释了绝大多数数操作符的用法](https://www.learnrxjs.io)
-- [可交互的弹珠图](https://rxmarbles.com/)
+*   [操作符决策树](https://rxjs-dev.firebaseapp.com/operator-decision-tree)
+*   [用动画展示一些容易混淆的操作符的区别](https://reactive.how/)
+*   [用例子解释了绝大多数数操作符的用法](https://www.learnrxjs.io)
+*   [可交互的弹珠图](https://rxmarbles.com/)
 
 操作符的功能按照对数据的处理方式可以分成八大类，距离可以参考[这里获取所有列表](https://www.learnrxjs.io/learn-rxjs/operators)
 
@@ -374,7 +374,7 @@ of(1, 2, 3, 4, 5)
 
 使用 Observable 的起点，用来方便我们创建流。
 
-![CA4EDA6B-B584-4C0E-9565-A61265CFAF96](media/15896120921996/CA4EDA6B-B584-4C0E-9565-A61265CFAF96.png)
+![CA4EDA6B-B584-4C0E-9565-A61265CFAF96](./media/15896120921996/CA4EDA6B-B584-4C0E-9565-A61265CFAF96.png)
 
 ###### from vs of
 
@@ -420,7 +420,7 @@ interval(2000);
 
 对数据的数量做处理，但保持数据格式不变，类似数组的 filter
 
-![03DC90BB-2289-4622-896D-481C719C1E19](media/15896120921996/03DC90BB-2289-4622-896D-481C719C1E19.png)
+![03DC90BB-2289-4622-896D-481C719C1E19](./media/15896120921996/03DC90BB-2289-4622-896D-481C719C1E19.png)
 
 ###### throttle vs debounce
 
@@ -430,7 +430,7 @@ interval(2000);
 
 将多个流合并成一个流方便后续处理。
 
-![3B146D4A-E104-43B6-8D45-3CE5996012AD](media/15896120921996/3B146D4A-E104-43B6-8D45-3CE5996012AD.png)
+![3B146D4A-E104-43B6-8D45-3CE5996012AD](./media/15896120921996/3B146D4A-E104-43B6-8D45-3CE5996012AD.png)
 
 ###### merge vs concat
 
@@ -440,7 +440,7 @@ interval(2000);
 
 对数据的数量不作处理，但是改变数据的结构定义。类似数据的 map。
 
-![776E0039-C256-41C7-90F5-476B532B3B4E](media/15896120921996/776E0039-C256-41C7-90F5-476B532B3B4E.png)
+![776E0039-C256-41C7-90F5-476B532B3B4E](./media/15896120921996/776E0039-C256-41C7-90F5-476B532B3B4E.png)
 
 ###### map vs mergeMap vs exhaustMap vs switchMap vs concatMap
 
@@ -493,23 +493,23 @@ fromEvent(document.getElementById('button'), 'click')
 
 和 mergeMap 很像的还有另外三个操作符
 
-- mergeMap: 并发的执行子 Observable
-- concatMap: 等上一个子 Observable 执行完毕后再执行当前，队列执行
-- switchMap:订阅当前的子 Observable，停止执行之前的所有子 Observable
-- exhaustMap:在当前的子 Observable 没有执行前，忽略所有其他新来的创建子 Observable 请求
+*   mergeMap: 并发的执行子 Observable
+*   concatMap: 等上一个子 Observable 执行完毕后再执行当前，队列执行
+*   switchMap:订阅当前的子 Observable，停止执行之前的所有子 Observable
+*   exhaustMap:在当前的子 Observable 没有执行前，忽略所有其他新来的创建子 Observable 请求
 
 具体建议[自己运行](https://stackblitz.com/edit/jo3dq1?file=transform_operator.ts)感受下
 
 ##### 错误处理
 
-![FB2D98A2-9CF6-44BD-B275-613CEF06C45F](media/15896120921996/FB2D98A2-9CF6-44BD-B275-613CEF06C45F.png)
+![FB2D98A2-9CF6-44BD-B275-613CEF06C45F](./media/15896120921996/FB2D98A2-9CF6-44BD-B275-613CEF06C45F.png)
 
 ##### 工具 && 条件 && 多播
 
-![BE220755-D37A-4D60-B975-FFBD766BF58E](media/15896120921996/BE220755-D37A-4D60-B975-FFBD766BF58E.png)
+![BE220755-D37A-4D60-B975-FFBD766BF58E](./media/15896120921996/BE220755-D37A-4D60-B975-FFBD766BF58E.png)
 
-![014D734D-1E09-4158-9463-AD9C46C79F33](media/15896120921996/014D734D-1E09-4158-9463-AD9C46C79F33.png)
-![E12DC323-384D-4F70-8659-28A74166F](media/15896120921996/E12DC323-384D-4F70-8659-28A74166FC33.png)
+![014D734D-1E09-4158-9463-AD9C46C79F33](./media/15896120921996/014D734D-1E09-4158-9463-AD9C46C79F33.png)
+![E12DC323-384D-4F70-8659-28A74166F](./media/15896120921996/E12DC323-384D-4F70-8659-28A74166FC33.png)
 
 ## 第三部分 总结
 

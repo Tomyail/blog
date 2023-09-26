@@ -1,4 +1,4 @@
-import unified from 'unified';
+import {unified} from 'unified';
 import parse from 'remark-parse';
 import stringify from 'remark-stringify';
 import frontmatter from 'remark-frontmatter';
@@ -6,6 +6,7 @@ import klaw from 'klaw-sync';
 import path from 'path';
 import { Observable, from } from 'rxjs';
 import { filter, map, mergeAll, reduce } from 'rxjs/operators';
+import * as vfile from 'to-vfile';
 
 const configUnified = () => {
   return unified().use(parse).use(stringify).use(frontmatter, ['yaml']);
