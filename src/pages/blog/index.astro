@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import GoogleAnalytics from '../../components/GoogleAnalytics.astro';
 
 const posts = (await getCollection('blog'))
  .sort(
@@ -16,6 +17,7 @@ const posts = (await getCollection('blog'))
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    {import.meta.env.PROD && <GoogleAnalytics />}
 		<style>
 			main {
 				width: 960px;
