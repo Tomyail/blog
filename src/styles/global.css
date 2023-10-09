@@ -79,17 +79,28 @@ b {
   font-weight: 700;
 }
 a {
-  color: var(--accent);
+  @apply text-blue-500
 }
 a:hover {
-  color: var(--accent);
+  @apply text-blue-500/80;
 }
 p {
   margin-bottom: 1em;
 }
-.prose p {
-  margin-bottom: 2em;
+
+.prose {
+  width: 720px;
+  max-width: calc(100% - 2em);
+  margin: auto;
+  padding: 1em;
+  color: rgb(var(--gray-dark));
 }
+
+.prose p {
+  margin-bottom: 1rem;
+  margin-block-start:0
+}
+
 textarea {
   width: 100%;
   font-size: 16px;
@@ -98,7 +109,16 @@ input {
   font-size: 16px;
 }
 table {
-  width: 100%;
+  @apply border-collapse table-auto w-full
+}
+td {
+  @apply border border-red-500
+}
+tr {
+  @apply border border-red-500
+}
+th {
+  @apply border border-red-500
 }
 img {
   max-width: 100%;
@@ -119,13 +139,14 @@ pre > code {
 }
 blockquote {
   border-left: 4px solid var(--accent);
-  padding: 0 0 0 20px;
-  margin: 0px;
-  font-size: 1.333em;
+  @apply border-l-4 border-blue-500 pl-4 m-0 text-2xl;
 }
 hr {
   border: none;
   border-top: 1px solid rgb(var(--gray-light));
+}
+ol {
+  list-style-type: decimal;
 }
 @media (max-width: 720px) {
   body {

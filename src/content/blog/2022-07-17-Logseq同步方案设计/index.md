@@ -6,6 +6,7 @@ tags:
 slug: how-to-sync-logseq-notes-between-icloud-and-github
 created_at: 2022-07-17T06:43:52.063Z
 updated_at: 2022-07-17T06:43:52.063Z
+description: 这篇文章是作者分享了自己如何在 Logseq 笔记应用中使用 iCloud 和 GitHub 进行同步的方案。作者首先介绍了自己在使用 Logseq 时遇到的问题，即无法在公司的开发机上使用 iCloud 进行同步。为了解决这个问题，作者使用了 GitHub 进行同步，但是发现这个方案会导致 git 记录冲突。作者介绍了自己如何使用 unison 工具进行双向同步，以及如何使用 cloud-ignore-files 仓库来忽略同步时的冲突。作者还分享了自己如何在 Mac mini 上设置定时任务来自动同步数据，并提供了详细的设置步骤。总体来说，这篇文章是一篇技术性的文章，适合对 Logseq 和同步方案感兴趣的读者阅读。
 ---
 
 # 遇到的问题

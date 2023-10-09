@@ -7,42 +7,43 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import GoogleAnalytics from '../../components/GoogleAnalytics.astro';
 
-const posts = (await getCollection('blog'))
- .sort(
- 	(a, b) =>  b.data.created_at - a.data.created_at
- )
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.created_at - a.data.created_at,
+);
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     {import.meta.env.PROD && <GoogleAnalytics />}
-	</head>
-	<body>
-		<Header />
-		<main >
-			<section>
-				<ul class="flex flex-wrap gap-4 md:gap-8 ">
-					{
-						posts.map((post) => (
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <ul class="flex flex-wrap gap-4 md:gap-10">
+          {
+            posts.map((post) => (
               //md:w-[calc(50%-1rem)]
-							<li class="first:w-full first:text-center first:mb-0 w-full text-center group">
-								<a href={`/blog/${post.slug}/`}>
+              <li class="first:w-full first:text-center first:mb-0 w-full text-center group">
+                <a href={`/blog/${post.slug}/`}>
                   <p class="text-left text-sm text-zinc-400 tracking-tighter font-thin italic">
-										<FormattedDate date={post.data.created_at} />
+                    <FormattedDate date={post.data.created_at} />
                   </p>
-									<h2 class="text-3xl font-semibold tracking-tight text-zinc-700 text-left  mt-1 group-hover:underline underline-offset-4 ">{post.data.title}</h2>
-                  <p class="relative z-10 mt-1 text-zinc-400 relin-paragraph-target text-left">
+                  <h2 class="text-3xl font-semibold tracking-tight text-zinc-700 text-left  mt-1.5 group-hover:underline underline-offset-4 ">
+                    {post.data.title}
+                  </h2>
+                  <p class="relative z-10 mt-1.5 text-zinc-500 relin-paragraph-target text-left">
                     {post.data.description}
                   </p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>

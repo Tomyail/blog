@@ -3,6 +3,7 @@ title: 如何为 pve 系统新增用户
 created_at: "2023-05-03T10:03:42.990Z"
 updated_at: "2023-05-03T10:03:42.990Z"
 slug: how-to-add-user-for-pve
+description: "本文介绍了如何在 Proxmox VE (PVE) 中添加 PVE 用户和 PAM 用户以及如何分配权限。根据需要选择不同类型的用户，PAM 用户适用于需要 SSH 登陆的场景，而 PVE 用户仅适用于在 Web 上操作的场景。按照本文的步骤，你可以轻松地在 PVE 中管理用户及其权限。"
 tags:
     - 技术
     - Linux

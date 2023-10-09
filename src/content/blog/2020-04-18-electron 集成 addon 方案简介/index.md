@@ -6,6 +6,7 @@ tags:
 slug: introducing-node-addon-development-with-electron
 created_at: 2020-04-18T13:10:59.333Z
 updated_at: 2020-04-18T13:10:59.333Z
+description: 本文介绍了作者在开发 electron 项目时，如何集成 addon 的方案。作者首先介绍了 addon 的基本概念，然后介绍了编译 addon 的两种方式：预编译和源码编译。作者还介绍了如何使用 electron-rebuild 来编译 addon，以及如何在持续集成中使用真实的 mac 或者 window 操作系统 + shell 来编译 addon。
 ---
 
 ## addon 简介

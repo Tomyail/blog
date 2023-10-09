@@ -3,7 +3,7 @@ title: 使用 k3s 和 tailscale 在甲骨文云和家之间搭建 kubernetes 集
 created_at: 2023-09-23T05:24:32.462Z
 updated_at: 2023-09-24T15:31:24.773Z
 tags: [k8s,linux]
-description: 'Lorem ipsum dolor sit amet'
+description: '本文介绍如何使用 k3s 和 tailscale 在甲骨文云和家之间搭建 Kubernetes 集群。作者首先尝试在甲骨文云上搭建 k3s 集群，但是由于虚拟机性能不足，导致无法稳定运行。为了解决这个问题，作者决定在家里的 PVE 上搭建 k3s server，并通过 tailscale 连接所有的甲骨文机器。文章详细介绍了如何在家里的 PVE 上配置 k3s server 和 tailscale，并验证 k3s server 已经通过 tailscale 连接。最后，文章总结了作者的经验和教训。'
 slug: using-k3s-and-tailscale-to-build-kubernets-cluster-between-oraclecloud-and-home
 ---
 

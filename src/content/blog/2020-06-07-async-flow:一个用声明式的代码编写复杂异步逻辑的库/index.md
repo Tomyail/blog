@@ -6,6 +6,7 @@ tags:
 slug: write-asynchronous-logic-in-declarative-coding-style-with-async-flow
 created_at: 2020-06-07T14:10:59.333Z
 updated_at: 2020-06-07T14:10:59.333Z
+description: 这篇文章介绍了作者开发的一个名为 async-flow 的 JavaScript 库，它可以帮助开发者用声明式的代码风格编写复杂异步逻辑。作者以一个关于作业的 app 为例，说明了不同角色和场景下请求不同 API 接口和数据结构的情况，以及如何使用 async-flow 封装这些异步逻辑的差异性，对外部不可见。文章介绍了 async-flow 的主要功能，包括声明式定义异步逻辑块、不同异步逻辑块之间的依赖关系、汇总到统一的上下文上、隐藏 RxJS 操作符的复杂性等。作者还提供了使用 async-flow 的具体代码示例，包括定义异步逻辑配置和组装异步流程。总体来说，这篇文章适合对 JavaScript 异步编程和 RxJS 感兴趣的读者阅读。
 ---
 
 我们有个关于作业的 app 启动后需要先获取一个作业 id 列表（请求 A），然后根据 id 列表的长度构建 n 个页面。 当用户翻到某一页时，根据这个 id 获取当前作业的详细情况（请求 B）。

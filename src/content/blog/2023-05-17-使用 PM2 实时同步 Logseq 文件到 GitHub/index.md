@@ -3,6 +3,7 @@ title: 使用 PM2 实时同步 Logseq 文件到 GitHub
 created_at: "2023-05-17T08:21:06.522Z"
 updated_at: "2023-05-17T08:21:06.522Z"
 slug: realtime-sync-logseq-to-github-using-pm2
+description: "把 Logseq 笔记同步到 GitHub 是一个常见的需求，但是之前的定时同步方案存在一些问题，例如同步时间间隔过长。为了解决这个问题，作者提出了一种使用 PM2 实时同步 Logseq 文件到 GitHub 的方案。该方案通过监听 Logseq 文件夹的变化，当检测到文件变化后立即执行 git 同步。文章详细介绍了如何使用 PM2 实现该方案，并提供了相应的代码示例"
 tags:
     - Logseq
     - 技术
