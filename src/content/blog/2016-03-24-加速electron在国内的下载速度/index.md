@@ -3,7 +3,7 @@ title: 加速electron在国内的下载速度
 tags:
   - 技术
   - Electron
-path: /install-electron-slow-in-china/
+slug: install-electron-slow-in-china
 visible: true
 created_at: 2016-03-23T19:02:30.000Z
 updated_at: 2016-03-23T19:02:30.000Z

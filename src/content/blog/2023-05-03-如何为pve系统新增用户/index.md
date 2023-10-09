@@ -2,7 +2,7 @@
 title: 如何为 pve 系统新增用户
 created_at: "2023-05-03T10:03:42.990Z"
 updated_at: "2023-05-03T10:03:42.990Z"
-path: /how-to-add-user-for-pve/
+slug: how-to-add-user-for-pve
 tags:
     - 技术
     - Linux

@@ -5,7 +5,7 @@ tags:
   - Unit-test
 id: 1045
 comment: false
-path: /using-asunit/
+slug: using-asunit
 created_at: 2012-06-28T23:00:00.000Z
 updated_at: 2012-06-28T23:00:00.000Z
 ---

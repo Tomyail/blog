@@ -4,7 +4,7 @@ tags:
   - 技术
   - JavaScript
   - React
-path: /react-router-migration/
+slug: react-router-migration
 created_at: 2017-08-27T22:27:14.000Z
 updated_at: 2017-08-27T22:27:14.000Z
 ---

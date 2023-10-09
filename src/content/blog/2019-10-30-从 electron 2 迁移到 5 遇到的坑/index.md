@@ -3,7 +3,7 @@ title: 从 electron 2 迁移到 5 遇到的坑
 tags:
   - 技术
   - Electron
-path: /migration-from-electron-2-to-5/
+slug: migration-from-electron-2-to-5
 created_at: 2019-10-30T10:26:13.752Z
 updated_at: 2019-10-30T10:26:13.752Z
 ---

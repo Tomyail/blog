@@ -2,7 +2,7 @@
 title: 2022 个人总结
 created_at: '2023-02-08T08:39:40.183Z'
 updated_at: '2023-02-08T08:39:40.183Z'
-path: /2022-summary/
+slug: 2022-summary
 ---
 
 ## 读过的书

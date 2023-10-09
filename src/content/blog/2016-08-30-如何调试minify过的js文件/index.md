@@ -3,7 +3,7 @@ title: 如何调试minify过的js文件
 tags:
   - 技术
   - JavaScript
-path: /debug-js-without-sourcemap/
+slug: debug-js-without-sourcemap
 created_at: 2016-08-29T16:43:01.000Z
 updated_at: 2016-08-29T16:43:01.000Z
 ---

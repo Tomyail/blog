@@ -3,7 +3,7 @@ title: eslint的正确使用方式
 tags:
   - 技术
   - JavaScript
-path: /eslint-with-prettier/
+slug: eslint-with-prettier
 created_at: 2017-05-09T23:24:44.000Z
 updated_at: 2017-05-09T23:24:44.000Z
 ---

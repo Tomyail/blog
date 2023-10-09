@@ -4,7 +4,7 @@ tags:
   - 技术
   - Flash
 id: 1180
-path: /nape-geompoly/
+slug: nape-geompoly
 created_at: 2013-05-09T23:15:54.000Z
 updated_at: 2013-05-09T23:15:54.000Z
 ---

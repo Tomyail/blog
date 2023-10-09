@@ -3,7 +3,7 @@ title: 使用travis自动部署hexo日志
 tags:
   - 技术
   - CI
-path: /writing-hexo-blog-with-travis-ci/
+slug: writing-hexo-blog-with-travis-ci
 created_at: 2016-09-04T15:44:21.000Z
 updated_at: 2016-09-04T15:44:21.000Z
 ---

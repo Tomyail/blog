@@ -2,7 +2,7 @@
 title: 从Wordpress迁移到Hexo
 tags:
   - 技术
-path: /hexo-migrate/
+slug: hexo-migrate
 created_at: 2015-11-04T14:20:29.000Z
 updated_at: 2015-11-04T14:20:29.000Z
 ---

@@ -5,7 +5,7 @@ tags:
   - Flash
 id: 954
 comment: false
-path: /box2d-usage/
+slug: box2d-usage
 created_at: 2012-02-27T20:13:34.000Z
 updated_at: 2012-02-27T20:13:34.000Z
 ---

@@ -3,7 +3,7 @@ title: Logseq 同步方案设计
 tags:
   - logseq
   - 技术
-path: /how-to-sync-logseq-notes-between-icloud-and-github/
+slug: how-to-sync-logseq-notes-between-icloud-and-github
 created_at: 2022-07-17T06:43:52.063Z
 updated_at: 2022-07-17T06:43:52.063Z
 ---

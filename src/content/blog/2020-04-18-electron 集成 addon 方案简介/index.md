@@ -3,7 +3,7 @@ title: electron 集成 addon 方案简介
 tags:
   - 技术
   - Electron
-path: /introducing-node-addon-development-with-electron/
+slug: introducing-node-addon-development-with-electron
 created_at: 2020-04-18T13:10:59.333Z
 updated_at: 2020-04-18T13:10:59.333Z
 ---

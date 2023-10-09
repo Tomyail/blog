@@ -2,7 +2,7 @@
 title: 《巨人的陨落》书评
 tags:
   - Reading-Note
-path: /fall-of-giant-review/
+slug: fall-of-giant-review
 created_at: 2016-09-03T11:12:33.000Z
 updated_at: 2016-09-03T11:12:33.000Z
 ---

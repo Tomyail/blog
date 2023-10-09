@@ -4,7 +4,7 @@ tags:
   - 技术
   - Flash
 id: 1123
-path: /understanding-nape-interaction/
+slug: understanding-nape-interaction
 created_at: 2013-03-14T14:27:26.000Z
 updated_at: 2013-03-14T14:27:26.000Z
 ---

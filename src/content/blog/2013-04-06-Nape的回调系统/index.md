@@ -4,7 +4,7 @@ tags:
   - 技术
   - Flash
 id: 1147
-path: /nape-callback/
+slug: nape-callback
 created_at: 2013-04-05T18:54:44.000Z
 updated_at: 2013-04-05T18:54:44.000Z
 ---

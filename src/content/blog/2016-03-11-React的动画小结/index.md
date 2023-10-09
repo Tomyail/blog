@@ -4,7 +4,7 @@ tags:
   - 技术
   - JavaScript
   - React
-path: /react-animation/
+slug: react-animation
 created_at: 2016-03-10T22:15:59.000Z
 updated_at: 2016-03-10T22:15:59.000Z
 ---

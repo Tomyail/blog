@@ -1,6 +1,5 @@
 ---
 title: 使用 k3s 和 tailscale 在甲骨文云和家之间搭建 kubernetes 集群
-path: /using-k3s-and-tailscale-to-build-kubernets-cluster-between-oraclecloud-and-home/
 created_at: 2023-09-23T05:24:32.462Z
 updated_at: 2023-09-24T15:31:24.773Z
 tags: [k8s,linux]

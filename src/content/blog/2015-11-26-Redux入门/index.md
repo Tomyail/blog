@@ -3,7 +3,7 @@ title: Redux入门
 tags:
   - 技术
   - JavaScript
-path: /introduction-of-redux/
+slug: introduction-of-redux
 created_at: 2015-11-25T22:59:39.000Z
 updated_at: 2015-11-25T22:59:39.000Z
 ---

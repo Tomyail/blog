@@ -3,7 +3,7 @@ title: async-flow:一个帮助我们用声明式的代码风格编写复杂异�
 tags:
   - 技术
   - RxJS
-path: /write-asynchronous-logic-in-declarative-coding-style-with-async-flow/
+slug: write-asynchronous-logic-in-declarative-coding-style-with-async-flow
 created_at: 2020-06-07T14:10:59.333Z
 updated_at: 2020-06-07T14:10:59.333Z
 ---

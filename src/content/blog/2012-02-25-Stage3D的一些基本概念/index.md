@@ -5,7 +5,7 @@ tags:
   - Flash
 id: 943
 comment: false
-path: /stage3d-basic-concept/
+slug: stage3d-basic-concept
 created_at: 2012-02-25T01:14:40.000Z
 updated_at: 2012-02-25T01:14:40.000Z
 ---

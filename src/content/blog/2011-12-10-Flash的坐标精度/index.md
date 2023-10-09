@@ -5,7 +5,7 @@ tags:
   - Flash
 id: 928
 comment: false
-path: /flash-coordinate-accuracy/
+slug: flash-coordinate-accuracy
 created_at: 2011-12-09T18:52:56.000Z
 updated_at: 2011-12-09T18:52:56.000Z
 ---

@@ -3,7 +3,7 @@ title: 如何花30分钟解决 eslint 产生的各种错误
 tags:
   - 技术
   - JavaScript
-path: /how-to-lint-legacy-jscode-in-30min/
+slug: how-to-lint-legacy-jscode-in-30min
 created_at: 2017-06-23T00:09:24.000Z
 updated_at: 2017-06-23T00:09:24.000Z
 ---

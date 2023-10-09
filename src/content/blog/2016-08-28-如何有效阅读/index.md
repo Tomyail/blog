@@ -2,7 +2,7 @@
 title: 如何有效阅读
 tags:
   - Reading-Note
-path: /how-to-read-book/
+slug: how-to-read-book
 created_at: 2016-08-28T15:10:50.000Z
 updated_at: 2016-08-28T15:10:50.000Z
 ---

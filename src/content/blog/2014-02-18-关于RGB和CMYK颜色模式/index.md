@@ -3,7 +3,7 @@ title: 关于RGB和CMYK颜色模式
 id: 1204
 tags:
   - 技术
-path: /cmyk-rgb/
+slug: cmyk-rgb
 created_at: 2014-02-17T23:19:13.000Z
 updated_at: 2014-02-17T23:19:13.000Z
 ---

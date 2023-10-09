@@ -4,7 +4,7 @@ tags:
   - 技术
   - Flash
 id: 1245
-path: /flash-text-mobile-difference/
+slug: flash-text-mobile-difference
 created_at: 2014-06-13T16:46:53.000Z
 updated_at: 2014-06-13T16:46:53.000Z
 ---

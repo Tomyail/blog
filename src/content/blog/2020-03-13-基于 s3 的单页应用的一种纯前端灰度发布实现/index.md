@@ -3,7 +3,7 @@ title: 基于 s3 的单页应用的一种纯前端灰度发布实现
 tags:
   - 技术
   - React
-path: /a-b-testing-for-create-react-app/
+slug: a-b-testing-for-create-react-app
 created_at: 2020-03-13T08:26:59.333Z
 updated_at: 2020-03-13T08:26:59.333Z
 ---

@@ -3,7 +3,7 @@ title: RxJS 和响应式编程简介
 tags:
   - 技术
   - RxJS
-path: /introducing-reactive-programming-with-rxjs/
+slug: introducing-reactive-programming-with-rxjs
 created_at: 2020-05-28T14:10:59.333Z
 updated_at: 2020-05-28T14:10:59.333Z
 ---

@@ -3,7 +3,7 @@ title: 记一次树莓派磁盘占满的排查流程
 tags:
   - Unix-like
   - 技术
-path: /troubleshooting-for-raspberry-pi's-out-of-disk-space/
+slug: troubleshooting-for-raspberry-pi's-out-of-disk-space
 created_at: 2020-08-11T09:34:43.853Z
 updated_at: 2020-08-11T09:34:43.853Z
 ---

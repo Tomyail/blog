@@ -5,7 +5,7 @@ tags:
   - Vim
 id: 967
 comment: true
-path: /vim-hexe-ide/
+slug: vim-hexe-ide
 created_at: 2012-04-02T12:11:32.000Z
 updated_at: 2012-04-02T12:11:32.000Z
 ---

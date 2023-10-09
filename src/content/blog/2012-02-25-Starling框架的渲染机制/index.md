@@ -5,7 +5,7 @@ tags:
   - Flash
 id: 950
 comment: false
-path: /starling-render-system/
+slug: starling-render-system
 created_at: 2012-02-25T14:00:00.000Z
 updated_at: 2012-02-25T14:00:00.000Z
 ---

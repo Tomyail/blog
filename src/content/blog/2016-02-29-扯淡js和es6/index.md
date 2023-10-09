@@ -3,7 +3,7 @@ title: 扯淡js和es6
 tags:
   - 技术
   - JavaScript
-path: /thinking-about-js-and-es6/
+slug: thinking-about-js-and-es6
 created_at: 2016-02-28T23:22:59.000Z
 updated_at: 2016-02-28T23:22:59.000Z
 ---

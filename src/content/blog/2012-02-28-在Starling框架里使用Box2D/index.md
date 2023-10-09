@@ -5,7 +5,7 @@ tags:
   - Flash
 id: 960
 comment: false
-path: /using-box2d-in-starling/
+slug: using-box2d-in-starling
 created_at: 2012-02-27T22:29:16.000Z
 updated_at: 2012-02-27T22:29:16.000Z
 ---

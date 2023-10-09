@@ -3,7 +3,7 @@ title: 使用sublime记录evernote
 id: 1251
 tags:
   - 技术
-path: /using-sublime-to-update-evernote/
+slug: using-sublime-to-update-evernote
 created_at: 2015-01-21T18:22:15.000Z
 updated_at: 2015-01-21T18:22:15.000Z
 ---

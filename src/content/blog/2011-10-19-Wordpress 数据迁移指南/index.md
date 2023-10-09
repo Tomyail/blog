@@ -4,7 +4,7 @@ id: 922
 comment: true
 tags:
   - 技术
-path: /wordpress-migration/
+slug: wordpress-migration
 created_at: 2011-10-18T23:07:42.000Z
 updated_at: 2011-10-18T23:07:42.000Z
 ---

@@ -3,7 +3,7 @@ title: js和nodejs备忘
 tags:
   - 技术
   - JavaScript
-path: /js-foundation/
+slug: js-foundation
 created_at: 2015-08-31T22:13:45.000Z
 updated_at: 2015-08-31T22:13:45.000Z
 ---

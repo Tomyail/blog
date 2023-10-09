@@ -187,301 +187,301 @@ declare module 'astro:content' {
 		"blog": {
 "2011-10-19-Wordpress 数据迁移指南/index.md": {
 	id: "2011-10-19-Wordpress 数据迁移指南/index.md";
-  slug: "2011-10-19-wordpress-数据迁移指南";
+  slug: "wordpress-migration";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2011-12-10-Flash的坐标精度/index.md": {
 	id: "2011-12-10-Flash的坐标精度/index.md";
-  slug: "2011-12-10-flash的坐标精度";
+  slug: "flash-coordinate-accuracy";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2012-02-25-Stage3D的一些基本概念/index.md": {
 	id: "2012-02-25-Stage3D的一些基本概念/index.md";
-  slug: "2012-02-25-stage3d的一些基本概念";
+  slug: "stage3d-basic-concept";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2012-02-25-Starling框架的渲染机制/index.md": {
 	id: "2012-02-25-Starling框架的渲染机制/index.md";
-  slug: "2012-02-25-starling框架的渲染机制";
+  slug: "starling-render-system";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2012-02-28-Box2D使用笔记/index.md": {
 	id: "2012-02-28-Box2D使用笔记/index.md";
-  slug: "2012-02-28-box2d使用笔记";
+  slug: "box2d-usage";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2012-02-28-在Starling框架里使用Box2D/index.md": {
 	id: "2012-02-28-在Starling框架里使用Box2D/index.md";
-  slug: "2012-02-28-在starling框架里使用box2d";
+  slug: "using-box2d-in-starling";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2012-04-02-将Vim配置成Haxe的IDE/index.md": {
 	id: "2012-04-02-将Vim配置成Haxe的IDE/index.md";
-  slug: "2012-04-02-将vim配置成haxe的ide";
+  slug: "vim-hexe-ide";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2012-06-29-使用Flash单元测试框架asunit/index.md": {
 	id: "2012-06-29-使用Flash单元测试框架asunit/index.md";
-  slug: "2012-06-29-使用flash单元测试框架asunit";
+  slug: "using-asunit";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2013-02-25-Nape刚体研究小结/index.md": {
 	id: "2013-02-25-Nape刚体研究小结/index.md";
-  slug: "2013-02-25-nape刚体研究小结";
+  slug: "nape-rigid";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2013-03-14-理解Nape的Interaction/index.md": {
 	id: "2013-03-14-理解Nape的Interaction/index.md";
-  slug: "2013-03-14-理解nape的interaction";
+  slug: "understanding-nape-interaction";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2013-04-06-Nape的回调系统/index.md": {
 	id: "2013-04-06-Nape的回调系统/index.md";
-  slug: "2013-04-06-nape的回调系统";
+  slug: "nape-callback";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2013-05-10-Nape的几何相关笔记(GeomPoly)/index.md": {
 	id: "2013-05-10-Nape的几何相关笔记(GeomPoly)/index.md";
-  slug: "2013-05-10-nape的几何相关笔记geompoly";
+  slug: "nape-geompoly";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2014-02-18-关于RGB和CMYK颜色模式/index.md": {
 	id: "2014-02-18-关于RGB和CMYK颜色模式/index.md";
-  slug: "2014-02-18-关于rgb和cmyk颜色模式";
+  slug: "cmyk-rgb";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2014-06-14-Flash文本输入在移动设备上的差异/index.md": {
 	id: "2014-06-14-Flash文本输入在移动设备上的差异/index.md";
-  slug: "2014-06-14-flash文本输入在移动设备上的差异";
+  slug: "flash-text-mobile-difference";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2015-01-22-使用sublime记录evernote/index.md": {
 	id: "2015-01-22-使用sublime记录evernote/index.md";
-  slug: "2015-01-22-使用sublime记录evernote";
+  slug: "using-sublime-to-update-evernote";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2015-01-30-unity 4.6关于RectTransform的一些研究/index.md": {
 	id: "2015-01-30-unity 4.6关于RectTransform的一些研究/index.md";
-  slug: "2015-01-30-unity-46关于recttransform的一些研究";
+  slug: "unity-rect-transform";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2015-08-15-理解Unity3D里的Coroutine/index.md": {
 	id: "2015-08-15-理解Unity3D里的Coroutine/index.md";
-  slug: "2015-08-15-理解unity3d里的coroutine";
+  slug: "understanding-unity-coroutine";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2015-09-01-js和nodejs备忘/index.md": {
 	id: "2015-09-01-js和nodejs备忘/index.md";
-  slug: "2015-09-01-js和nodejs备忘";
+  slug: "js-foundation";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2015-11-04-从Wordpress迁移到Hexo/index.md": {
 	id: "2015-11-04-从Wordpress迁移到Hexo/index.md";
-  slug: "2015-11-04-从wordpress迁移到hexo";
+  slug: "hexo-migrate";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2015-11-26-Redux入门/index.md": {
 	id: "2015-11-26-Redux入门/index.md";
-  slug: "2015-11-26-redux入门";
+  slug: "introduction-of-redux";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2016-02-29-扯淡js和es6/index.md": {
 	id: "2016-02-29-扯淡js和es6/index.md";
-  slug: "2016-02-29-扯淡js和es6";
+  slug: "thinking-about-js-and-es6";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2016-03-02-扯淡js和es6 续/index.md": {
 	id: "2016-03-02-扯淡js和es6 续/index.md";
-  slug: "2016-03-02-扯淡js和es6-续";
+  slug: "thinking-about-js-and-es6-2";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2016-03-11-React的动画小结/index.md": {
 	id: "2016-03-11-React的动画小结/index.md";
-  slug: "2016-03-11-react的动画小结";
+  slug: "react-animation";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2016-03-24-加速electron在国内的下载速度/index.md": {
 	id: "2016-03-24-加速electron在国内的下载速度/index.md";
-  slug: "2016-03-24-加速electron在国内的下载速度";
+  slug: "install-electron-slow-in-china";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2016-08-28-如何有效阅读/index.md": {
 	id: "2016-08-28-如何有效阅读/index.md";
-  slug: "2016-08-28-如何有效阅读";
+  slug: "how-to-read-book";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2016-08-30-如何调试minify过的js文件/index.md": {
 	id: "2016-08-30-如何调试minify过的js文件/index.md";
-  slug: "2016-08-30-如何调试minify过的js文件";
+  slug: "debug-js-without-sourcemap";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2016-09-03-《巨人的陨落》书评/index.md": {
 	id: "2016-09-03-《巨人的陨落》书评/index.md";
-  slug: "2016-09-03-巨人的陨落书评";
+  slug: "fall-of-giant-review";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2016-09-04-使用travis自动部署hexo日志/index.md": {
 	id: "2016-09-04-使用travis自动部署hexo日志/index.md";
-  slug: "2016-09-04-使用travis自动部署hexo日志";
+  slug: "writing-hexo-blog-with-travis-ci";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2017-05-10-eslint的正确使用方式/index.md": {
 	id: "2017-05-10-eslint的正确使用方式/index.md";
-  slug: "2017-05-10-eslint的正确使用方式";
+  slug: "eslint-with-prettier";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2017-06-14-使用 git submodule 同步主从项目的依赖关系/index.md": {
 	id: "2017-06-14-使用 git submodule 同步主从项目的依赖关系/index.md";
-  slug: "2017-06-14-使用-git-submodule-同步主从项目的依赖关系";
+  slug: "using-git-submodule-lock-project";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2017-06-23-如何花30分钟解决 eslint 产生的各种错误/index.md": {
 	id: "2017-06-23-如何花30分钟解决 eslint 产生的各种错误/index.md";
-  slug: "2017-06-23-如何花30分钟解决-eslint-产生的各种错误";
+  slug: "how-to-lint-legacy-jscode-in-30min";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2017-08-28-react-router 升级填坑记录/index.md": {
 	id: "2017-08-28-react-router 升级填坑记录/index.md";
-  slug: "2017-08-28-react-router-升级填坑记录";
+  slug: "react-router-migration";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2019-10-30-从 electron 2 迁移到 5 遇到的坑/index.md": {
 	id: "2019-10-30-从 electron 2 迁移到 5 遇到的坑/index.md";
-  slug: "2019-10-30-从-electron-2-迁移到-5-遇到的坑";
+  slug: "migration-from-electron-2-to-5";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2020-03-13-基于 s3 的单页应用的一种纯前端灰度发布实现/index.md": {
 	id: "2020-03-13-基于 s3 的单页应用的一种纯前端灰度发布实现/index.md";
-  slug: "2020-03-13-基于-s3-的单页应用的一种纯前端灰度发布实现";
+  slug: "a-b-testing-for-create-react-app";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2020-04-18-electron 集成 addon 方案简介/index.md": {
 	id: "2020-04-18-electron 集成 addon 方案简介/index.md";
-  slug: "2020-04-18-electron-集成-addon-方案简介";
+  slug: "introducing-node-addon-development-with-electron";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2020-05-28-RxJS 和响应式编程简介/index.md": {
 	id: "2020-05-28-RxJS 和响应式编程简介/index.md";
-  slug: "2020-05-28-rxjs-和响应式编程简介";
+  slug: "introducing-reactive-programming-with-rxjs";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2020-06-07-async-flow:一个用声明式的代码编写复杂异步逻辑的库/index.md": {
 	id: "2020-06-07-async-flow:一个用声明式的代码编写复杂异步逻辑的库/index.md";
-  slug: "2020-06-07-async-flow一个用声明式的代码编写复杂异步逻辑的库";
+  slug: "write-asynchronous-logic-in-declarative-coding-style-with-async-flow";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2020-08-11-记一次树莓派磁盘占满的排查流程/index.md": {
 	id: "2020-08-11-记一次树莓派磁盘占满的排查流程/index.md";
-  slug: "2020-08-11-记一次树莓派磁盘占满的排查流程";
+  slug: "troubleshooting-for-raspberry-pi's-out-of-disk-space";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2022-07-17-Logseq同步方案设计/index.md": {
 	id: "2022-07-17-Logseq同步方案设计/index.md";
-  slug: "2022-07-17-logseq同步方案设计";
+  slug: "how-to-sync-logseq-notes-between-icloud-and-github";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2023-02-08-2022总结/index.md": {
 	id: "2023-02-08-2022总结/index.md";
-  slug: "2023-02-08-2022总结";
+  slug: "2022-summary";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2023-05-03-如何为pve系统新增用户/index.md": {
 	id: "2023-05-03-如何为pve系统新增用户/index.md";
-  slug: "2023-05-03-如何为pve系统新增用户";
+  slug: "how-to-add-user-for-pve";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2023-05-03-警惕！我差点被骗子盗走Telegram帐号的经历/index.md": {
 	id: "2023-05-03-警惕！我差点被骗子盗走Telegram帐号的经历/index.md";
-  slug: "2023-05-03-警惕我差点被骗子盗走telegram帐号的经历";
+  slug: "how-i-nearly-lost-my-telegram-account";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2023-05-17-使用 PM2 实时同步 Logseq 文件到 GitHub/index.md": {
 	id: "2023-05-17-使用 PM2 实时同步 Logseq 文件到 GitHub/index.md";
-  slug: "2023-05-17-使用-pm2-实时同步-logseq-文件到-github";
+  slug: "realtime-sync-logseq-to-github-using-pm2";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

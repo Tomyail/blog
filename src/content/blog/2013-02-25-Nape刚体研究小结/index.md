@@ -4,7 +4,7 @@ tags:
   - 技术
   - Flash
 id: 1065
-path: /nape-rigid/
+slug: nape-rigid
 created_at: 2013-02-24T20:18:06.000Z
 updated_at: 2013-02-24T20:18:06.000Z
 ---
