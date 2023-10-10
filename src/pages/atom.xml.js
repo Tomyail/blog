@@ -8,10 +8,12 @@ export async function GET(context) {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     site: context.site,
-    items: posts.map((post) => ({
-      ...post.data,
-      link: `/blog/${post.slug}/`,
-      pubDate: post.data.created_at
-    })),
+    items: posts
+      .map((post) => ({
+        ...post.data,
+        link: `${post.slug}?utm_source=rss&utm_medium=rss&utm_campaign=rss`,
+        pubDate: post.data.created_at,
+      }))
+      .sort((a, b) => b.pubDate - a.pubDate),
   });
 }
