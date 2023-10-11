@@ -49,13 +49,13 @@
     @apply border-collapse table-auto w-full;
   }
   td {
-    @apply border border-zinc-700 p-2;
+    @apply border  p-2;
   }
   tr {
-    @apply border border-zinc-700;
+    @apply border ;
   }
   th {
-    @apply border border-zinc-700 p-2;
+    @apply border  p-2;
   }
   img {
     @apply rounded-lg;

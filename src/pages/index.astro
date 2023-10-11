@@ -28,13 +28,13 @@ const posts = (await getCollection('blog')).sort(
               //md:w-[calc(50%-1rem)]
               <li class="first:w-full first:text-center first:mb-0 w-full text-center group">
                 <a href={`/${post.slug}/`}>
-                  <p class="text-right text-sm text-zinc-400 tracking-tighter font-thin italic">
+                  <p class="text-right text-sm  tracking-tighter font-thin italic">
                     <FormattedDate date={post.data.created_at} />
                   </p>
-                  <h2 class="text-3xl font-semibold tracking-tight text-zinc-700 text-center  mt-1 group-hover:underline underline-offset-4  ">
+                  <h2 class="text-3xl font-semibold tracking-tight  text-center  mt-1 group-hover:underline underline-offset-4  ">
                     {post.data.title}
                   </h2>
-                  <p class="relative z-10 mt-1.5 text-zinc-600 relin-paragraph-target text-justify indent-8">
+                  <p class="relative z-10 mt-1.5  relin-paragraph-target text-justify indent-8">
                     {post.data.description}
                   </p>
                 </a>

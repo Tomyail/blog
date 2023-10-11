@@ -23,7 +23,7 @@ const { title, description, created_at, updated_at, heroImage } = Astro.props;
       <article>
         <div class="prose">
           <div class="mb-4 py-4 text-center leading-none">
-            <div class="text-right text-sm text-zinc-400 tracking-tighter italic">
+            <div class="text-right text-sm  tracking-tighter italic">
               <FormattedDate date={created_at} />
               {
                 updated_at && updated_at > created_at && (
@@ -33,7 +33,7 @@ const { title, description, created_at, updated_at, heroImage } = Astro.props;
                 )
               }
             </div>
-            <h1 class="font-semibold tracking-tight text-zinc-700 text-center mt-2 ">{title}</h1>
+            <h1 class="font-semibold tracking-tight  text-center mt-2 ">{title}</h1>
             <hr class="mt-2"/>
           </div>
           <div class="main">
