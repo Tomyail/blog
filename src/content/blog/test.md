@@ -4,6 +4,7 @@ created_at: 2023-09-23T05:24:32.462Z
 updated_at: 2023-09-24T15:31:24.773Z
 tags: [k8s, linux]
 description: 'Lorem ipsum dolor sit amet'
+draft: true
 ---
 
 # Test
