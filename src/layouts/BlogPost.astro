@@ -1,4 +1,5 @@
 ---
+import './style.scss'
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
@@ -14,47 +15,6 @@ const { title, description, created_at, updated_at, heroImage } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    <style is:global>
-
-     .body h2{
-       @apply text-4xl my-2
-     }
-
-     .body h2{
-       @apply text-4xl my-2
-     }
-    </style>
-    <style >
-      main {
-        width: calc(100% - 2em);
-        max-width: 100%;
-        margin: 0;
-      }
-
-      
-      .body {
-        @apply text-base
-      }
-
-      .body :global(h1) {
-        @apply text-5xl 
-  }
-      .body :global(h3) {
-        @apply text-3xl
-      }
-
-      .body :global(h4) {
-        @apply text-2xl
-      }
-
-      .body :global(h5) {
-        @apply text-xl
-      }
-
-      .body :global(h6) {
-        @apply text-lg
-      }
-         </style>
   </head>
 
   <body>
@@ -73,10 +33,10 @@ const { title, description, created_at, updated_at, heroImage } = Astro.props;
                 )
               }
             </div>
-            <h1 class="text-5xl font-semibold tracking-tight text-zinc-700 text-center mt-2 ">{title}</h1>
+            <h1 class="font-semibold tracking-tight text-zinc-700 text-center mt-2 ">{title}</h1>
             <hr class="mt-2"/>
           </div>
-          <div class="body">
+          <div class="main">
             <slot />
           </div>
         </div>
