@@ -1,13 +1,12 @@
-const vfile = require('to-vfile');
-const report = require('vfile-reporter');
-const unified = require('unified');
-const parse = require('remark-parse');
-const stringify = require('remark-stringify');
-const frontmatter = require('remark-frontmatter');
-const klaw = require('klaw-sync');
-const path = require('path');
-const { Observable, from } = require('rxjs');
-const { filter, map, mergeAll, tap, reduce } = require('rxjs/operators');
+import {unified} from 'unified';
+import parse from 'remark-parse';
+import stringify from 'remark-stringify';
+import frontmatter from 'remark-frontmatter';
+import klaw from 'klaw-sync';
+import path from 'path';
+import { Observable, from } from 'rxjs';
+import { filter, map, mergeAll, reduce } from 'rxjs/operators';
+import * as vfile from 'to-vfile';
 
 const configUnified = () => {
   return unified().use(parse).use(stringify).use(frontmatter, ['yaml']);
@@ -56,31 +55,29 @@ const readMarkdowns = (dir) => {
   return markdowns;
 };
 
-module.exports = {
-  filterMarkdowns: ({ inputDir, markdownFilter }) => {
-    const markdowns = readMarkdowns(inputDir);
-    return from(
-      markdowns.map(({ path }) => filterMarkdown(path, markdownFilter))
-    ).pipe(
-      mergeAll(),
-      filter((x) => x.result),
-      map((x) => ({ path: x.path, file: x.file }))
-    );
-  },
-  mapMakrdowns: ({ inputDir, markdownMap }) => {
-    const markdowns = readMarkdowns(inputDir);
-    return from(
-      markdowns.map(({ path }) =>
-        mapMakrdown(path, markdownMap).pipe(
-          reduce((acc, cur) => {
-            return { ...acc, ...cur };
-          }, {})
-        )
+export const filterMarkdowns = ({ inputDir, markdownFilter }) => {
+  const markdowns = readMarkdowns(inputDir);
+  return from(
+    markdowns.map(({ path }) => filterMarkdown(path, markdownFilter))
+  ).pipe(
+    mergeAll(),
+    filter((x) => x.result),
+    map((x) => ({ path: x.path, file: x.file }))
+  );
+};
+export const mapMakrdowns = ({ inputDir, markdownMap }) => {
+  const markdowns = readMarkdowns(inputDir);
+  return from(
+    markdowns.map(({ path }) =>
+      mapMakrdown(path, markdownMap).pipe(
+        reduce((acc, cur) => {
+          return { ...acc, ...cur };
+        }, {})
       )
-    ).pipe(
-      mergeAll(),
-      filter((x) => x.result && x.result[0]),
-      map((x) => ({ path: x.path, file: x.result[1], content: x.file }))
-    );
-  },
+    )
+  ).pipe(
+    mergeAll(),
+    filter((x) => x.result && x.result[0]),
+    map((x) => ({ path: x.path, file: x.result[1], content: x.file }))
+  );
 };

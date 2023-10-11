@@ -1,0 +1,110 @@
+.prose {
+  /* @apply md:px-4 md:py-8 max-w-[calc(100%-2rem)] mx-auto md:w-[800px]; */
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply md:mb-4 mb-2 tracking-tight
+  }
+  h1 {
+    @apply md:text-5xl text-4xl;
+  }
+  h2 {
+    @apply md:text-4xl text-3xl;
+  }
+  h3 {
+    @apply md:text-3xl text-2xl;
+  }
+  h4 {
+    @apply md:text-2xl text-xl;
+  }
+  h5 {
+    @apply md:text-2xl text-xl;
+  }
+  h6 {
+    @apply text-lg;
+  }
+  strong,
+  b {
+    @apply font-bold;
+  }
+  a {
+    @apply text-blue-500;
+  }
+  a:hover {
+    @apply text-blue-500/80 underline underline-offset-2;
+  }
+  p {
+    margin-block-start: 0;
+    @apply md:mb-4 mb-1
+  }
+
+  textarea {
+    width: 100%;
+  }
+  table {
+    @apply border-collapse table-auto w-full;
+  }
+  td {
+    @apply border border-zinc-700 p-2;
+  }
+  tr {
+    @apply border border-zinc-700;
+  }
+  th {
+    @apply border border-zinc-700 p-2;
+  }
+  img {
+    @apply rounded-lg;
+  }
+  code {
+    padding: 2px 5px;
+    background-color: rgb(var(--gray-light));
+    border-radius: 2px;
+  }
+
+  .expressive-code {
+    @apply md:mb-4 mb-2;
+  }
+  pre {
+    @apply mb-4 p-4 rounded-lg;
+  }
+  pre > code {
+    all: unset;
+  }
+  blockquote {
+    border-left: 4px solid var(--accent);
+    @apply border-l-4 border-blue-500 pl-4 m-0;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid rgb(var(--gray-light));
+  }
+  ul {
+    @apply list-disc pb-2 list-outside pl-6
+  }
+  ol {
+    @apply list-decimal pb-2 list-outside pl-6
+  }
+
+  .sr-only {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+    clip: rect(1px 1px 1px 1px);
+    /* maybe deprecated but we need to support legacy browsers */
+    clip: rect(1px, 1px, 1px, 1px);
+    /* modern browsers, clip-path works inwards from each corner */
+    clip-path: inset(50%);
+    /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+    white-space: nowrap;
+  }
+}
