@@ -6,6 +6,7 @@ tags:
 slug: using-git-submodule-lock-project
 created_at: 2017-06-13T22:48:28.000Z
 updated_at: 2017-06-13T22:48:28.000Z
+description: 本文主要介绍了如何使用 git submodule 同步主从项目的依赖关系.
 ---
 
 ## 问题:

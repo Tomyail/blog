@@ -6,6 +6,7 @@ tags:
 slug: writing-hexo-blog-with-travis-ci
 created_at: 2016-09-04T15:44:21.000Z
 updated_at: 2016-09-04T15:44:21.000Z
+description: 这篇博客介绍了如何使用 Travis CI 实现自动部署 Hexo 日志。作者首先介绍了自己写日志的流程，然后提出了想要实现自动化部署的需求。接着，作者介绍了什么是持续集成（CI），并且提到了使用 Jenkins 的经验。最后，作者介绍了如何使用 Travis CI 实现自动部署，包括在 GitHub 上创建一个新的仓库、在 Travis CI 上启用自动构建、配置 .travis.yml 文件等。最终的效果是，当在 GitHub 上提交新的日志时，Travis CI 会自动触发构建和部署，从而实现自动化部署的目的。
 ---
 
 ## 起因

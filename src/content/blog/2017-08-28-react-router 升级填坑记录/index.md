@@ -7,6 +7,7 @@ tags:
 slug: react-router-migration
 created_at: 2017-08-27T22:27:14.000Z
 updated_at: 2017-08-27T22:27:14.000Z
+description: 一篇关于从 React-Router 3 升级到 4 版本的博客文章。作者记录了在升级过程中遇到的一些问题和解决方案。文章介绍了 React-Router 4 版本相对于 3 版本的一些变化，包括去掉了钩子函数，路由匹配后直接渲染对应的组件等。作者还提到了一些在升级过程中需要注意的问题，如路由的动态匹配规则和 querystring 的变化等。文章最后给出了一个更好的解决方案，即改变程序的启动逻辑，将前置数据准备和 querystring 判断放在 BootstrapLoader 组件里面，在其判断结束后给 state 树上面的 isAppReady 设置为 true，之后走路由的匹配规则
 ---
 
 最近项目从 React-Router 3 升级到 4 版本,经历了一堆坑,但是也加深了对 router 的理解.由于[官网](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/guides/migrating.md)的迁移文档毫无诚意,所以写篇博客记录下.

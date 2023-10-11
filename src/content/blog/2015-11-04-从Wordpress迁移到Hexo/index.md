@@ -5,6 +5,7 @@ tags:
 slug: hexo-migrate
 created_at: 2015-11-04T14:20:29.000Z
 updated_at: 2015-11-04T14:20:29.000Z
+description: 这篇文章介绍了作者从 Wordpress 迁移到 Hexo 的经历。作者分享了自己之前使用的博客发布流程的不便之处，以及为什么决定迁移到静态博客系统。作者介绍了自己之前尝试使用基于 Ruby 的 Octopress，但由于不熟悉 Ruby 的依赖系统而无法适应。最终，作者选择了基于 Node.js 的 Hexo，并分享了迁移过程中的一些经验和技巧。
 ---
 
 # 起因

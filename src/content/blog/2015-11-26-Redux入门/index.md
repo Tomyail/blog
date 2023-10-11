@@ -6,6 +6,7 @@ tags:
 slug: introduction-of-redux
 created_at: 2015-11-25T22:59:39.000Z
 updated_at: 2015-11-25T22:59:39.000Z
+description: 这篇文章介绍了 Redux 框架的入门知识。作者首先介绍了自己在学习 React 框架时接触到了 Flux 框架，但最终推荐使用了 Redux 框架。接着，作者展示了 Redux 的基本代码，包括创建 store 和定义 action 等。最后，作者提到了 Redux 的优点和适用场景。
 ---
 
 # 前言

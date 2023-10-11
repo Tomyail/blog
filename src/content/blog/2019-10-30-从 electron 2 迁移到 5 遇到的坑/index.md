@@ -6,6 +6,7 @@ tags:
 slug: migration-from-electron-2-to-5
 created_at: 2019-10-30T10:26:13.752Z
 updated_at: 2019-10-30T10:26:13.752Z
+description: 这篇文章讨论了从 Electron 2 升级到 Electron 5 时遇到的安全性提升所带来的挑战。作者强调了三个主要问题，包括 webview 标签的更改，需要在子框架中集成 node，以及使用需要拦截请求的第三方脚本。作者使用 Electron 的 API 提供了解决这些问题的方法。
 ---
 
 从 2 升级到 5，发现 electron 在安全性提升了很多。这也导致迁移遇到了一堆问题

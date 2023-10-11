@@ -8,6 +8,7 @@ comment: false
 slug: starling-render-system
 created_at: 2012-02-25T14:00:00.000Z
 updated_at: 2012-02-25T14:00:00.000Z
+description: 这篇文章主要介绍了 Starling 框架的渲染机制。作者首先介绍了 Stage3D 底层操作和 Context3D 类的基本工作流程。接着，作者详细讲解了 Starling 框架的渲染过程，并逐步分解了这个过程。作者提供了一些示例代码来帮助读者更好地理解 Starling 框架的渲染机制。最后，作者介绍了 Starling 框架的包结构层次和核心类，包括 Starling 类和 RenderSupport 类。
 ---
 
 Starling 框架（[UML 图](http://crocusmodeller.com/frameworks/starling.png)）是一个封装了 Stage3D 底层操作的 GPU 渲染框架，所以理解了其渲染机制也就能对 Stage3D 有一个初级的认识了。

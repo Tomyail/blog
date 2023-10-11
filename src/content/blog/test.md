@@ -123,6 +123,15 @@ Result:
 
     Indenting by 4 spaces will turn an entire paragraph into a code-block.
 
+
+```js title="example.js" {2-4}
+// Example function
+function add(a, b) {
+  return a + b
+}
+
+console.log(add(1, 2))
+```
 Result:
 
     .my-link {

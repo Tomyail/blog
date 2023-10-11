@@ -6,6 +6,7 @@ tags:
 slug: js-foundation
 created_at: 2015-08-31T22:13:45.000Z
 updated_at: 2015-08-31T22:13:45.000Z
+description: 这篇文章主要介绍了 JavaScript 和 Node.js 的区别，以及 npm 和 bower 的区别。作者指出，JavaScript 是基于浏览器的脚本语言，而 Node.js 则让 JavaScript 有能力脱离浏览器的环境直接在本地运行，并且具有了原生应用该有的操作。此外，作者还介绍了 npm 和 bower 的区别，指出 bower 是针对浏览器的包管理工具，而 npm 则是前后端通用的包管理工具。作者还提到，浏览器不能直接使用针对 Node.js 编写的 JavaScript 文件，因为不支持 require 关键字，需要使用 require.js 或 Browserify 进行转换。
 ---
 
 ## js 和 nodejs 的区别

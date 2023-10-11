@@ -6,6 +6,7 @@ tags:
 slug: introducing-reactive-programming-with-rxjs
 created_at: 2020-05-28T14:10:59.333Z
 updated_at: 2020-05-28T14:10:59.333Z
+description: 这篇博客介绍了 RxJS 库的基本概念和应用。作者首先介绍了 RxJS 的官方介绍，包括利用 observable 流为异步编程设计的一套 API，以及利用 Observables 模式方便我们编写基于异步组合或者回调的代码等。接着，作者介绍了 RxJS 的思想和响应式编程的思想，并指出掌握了 RxJS 的思想，就是掌握了响应式编程的思想。作者还介绍了 RxJS 中的流的概念，以及流的特点。最后，作者提到了 RxJS 中的一些常用操作符，如 map、filter、reduce 等，并给出了具体的使用示例。
 ---
 
 ## 第一部分 简介

@@ -8,6 +8,7 @@ comment: false
 slug: using-box2d-in-starling
 created_at: 2012-02-27T22:29:16.000Z
 updated_at: 2012-02-27T22:29:16.000Z
+description: 这篇文章主要介绍了如何在 Starling 框架中使用 Box2D 物理引擎。作者首先介绍了如何使用 Box2D 物理引擎，并掌握了内置的渲染方法。接着，作者详细讲解了如何将渲染工作交给 Starling 工作，并提供了相关的示例代码。最后，作者总结了自己的经验，并提醒读者在使用 Starling 框架和 Box2D 物理引擎时需要注意的问题。
 ---
 
 前面的那篇入门文章介绍了[如何使用 Box2D](http://tomyail.com/blog/?p=954 'Box2D使用笔记'),并且掌握了内置的渲染方法。

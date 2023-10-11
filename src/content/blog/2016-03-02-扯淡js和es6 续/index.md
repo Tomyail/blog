@@ -6,6 +6,7 @@ tags:
 slug: thinking-about-js-and-es6-2
 created_at: 2016-03-02T13:42:24.000Z
 updated_at: 2016-03-02T13:42:24.000Z
+description: 这篇博客是一篇关于 JavaScript 和 ES6 的技术文章。作者分享了自己在使用 koa 框架时遇到的问题，以及如何使用 babel 将代码转译成 ES5 的代码。作者介绍了三种解决方案，包括强制转换 node_modules 里面的代码、使用 webpack 把关联代码都转换了、给运行的的 node 加入--harmony_generators或者升级到 node4。最终，作者选择了使用 webpack 把关联代码都转换的方法，并介绍了 node 的--harmony参数和 node4 带来的 ES6 特性。
 ---
 
 事情从我使用 koa 开始吧。[koa](https://github.com/koajs/koa)是 js 界的[tj 大神](https://www.zhihu.com/question/24377059)又一力作。它是一个 server 框架，据说要成为下一代 express，主要亮点是使用 generator 替代回调以及 promise 产生的回调链，让代码看上去更加优雅。

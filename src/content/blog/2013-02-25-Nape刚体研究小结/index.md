@@ -7,6 +7,7 @@ id: 1065
 slug: nape-rigid
 created_at: 2013-02-24T20:18:06.000Z
 updated_at: 2013-02-24T20:18:06.000Z
+description: 这篇文章主要介绍了 Nape 引擎中的刚体和形状的概念和使用方法。作者首先介绍了 Nape 中的 Body 和 Shape 类，以及它们之间的关系。接着，作者详细讲解了如何使用 Polygon 类来创建一个矩形形状，并将其添加到一个刚体中。作者提供了一些示例代码来帮助读者更好地理解刚体和形状的使用方法。接着，作者介绍了如何使用 localCOM 属性来获取刚体的重心位置，并提供了一些示例代码来帮助读者更好地理解。最后，作者讲解了 align() 方法的作用，并提供了一些示例代码来帮助读者更好地理解。
 ---
 
 ### Body 的类型:
@@ -51,7 +52,7 @@ Polygon 有两个静态方法 box 和 rect,两者的区别就是刚体两个心�
 
 #### (1):利用 box 函数创建刚体测试
 
-```actionscript
+```actionscript-3
 body = new Body(BodyType.KINEMATIC);
 shape = new Polygon(Polygon.box(100, 100));
 body.shapes.add(shape);
@@ -72,7 +73,7 @@ trace(body.position); //输出(100,100)
 
 #### (2):利用 rect 函数创建刚体测试
 
-```actionscript
+```actionscript-3
 body = new Body(BodyType.KINEMATIC);
 shape = new Polygon(Polygon.rect(0, 0, 100, 100));
 body.shapes.add(shape);
@@ -96,7 +97,7 @@ trace(body.position); //输出(100,100)
 
 #### (3)测试 algin()的作用
 
-```actionscript
+```actionscript-3
 body = new Body(BodyType.KINEMATIC);
 shape = new Polygon(Polygon.rect(0, 0, 100, 100));
 body.shapes.add(shape);

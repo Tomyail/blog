@@ -8,6 +8,7 @@ comment: false
 slug: stage3d-basic-concept
 created_at: 2012-02-25T01:14:40.000Z
 updated_at: 2012-02-25T01:14:40.000Z
+description: 这篇文章主要介绍了 Stage3D 的一些基本概念。作者首先介绍了 Stage3D 层的概念和层级关系，并提供了示意图来帮助读者更好地理解。接着，作者详细讲解了 Stage3D 的坐标系统，包括右手坐标系、坐标原点和齐次裁剪空间等概念。作者还介绍了如何将 Stage3D 的坐标系统转换成 Flash 默认的坐标系。
 ---
 
 ## 层的概念

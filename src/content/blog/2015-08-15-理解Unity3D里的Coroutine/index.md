@@ -7,6 +7,7 @@ id: 1123
 slug: understanding-unity-coroutine
 created_at: 2015-08-15T14:27:26.000Z
 updated_at: 2015-08-15T14:27:26.000Z
+description: 这篇文章主要介绍了 Unity3D 中的协程（Coroutine）的概念和使用方法。作者首先介绍了协程在 AS3 中的缺失，然后详细讲解了 Unity3D 中的协程是如何通过 yield 关键字来定义的。作者还提供了一张 Unity 运行时序图来帮助读者理解协程的执行顺序。接着，作者详细讲解了 yield 关键字的用法和语法，并提供了一些示例代码来帮助读者更好地理解。最后，作者还提到了协程的一些注意事项和使用技巧。
 ---
 
 Coroutine,翻译过来叫协程,这东西在 as3 里面没有,所以觉得挺新鲜的,顾做点研究.

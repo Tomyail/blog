@@ -7,6 +7,7 @@ tags:
 slug: react-animation
 created_at: 2016-03-10T22:15:59.000Z
 updated_at: 2016-03-10T22:15:59.000Z
+description: 这篇博客是一篇关于 React 动画的小结。作者介绍了在 Ember 开发中使用 CSS 动画的方法，并指出在 React 中这种方法不起作用。作者介绍了 React 官网的动画文档，并介绍了 React 推荐使用的动画组件 ReactCSSTransitionGroup。作者指出这个动画组件基于 React 组件的生命周期，需要在 CSS 文件中定义一大堆以组件生命周期作为后缀的样式名称，并在代码中显式指定 CSS 动画时间。作者还介绍了基于 JavaScript 的动画库 Velocity.js 和其 React 版本 velocity-react。最后，作者给出了自定义动画对象的示例。
 ---
 
 在搞 Ember 开发时，简单的做过一些 CSS 动画，主要参考了这篇文章。[CSS 简介](http://www.ruanyifeng.com/blog/2014/02/css_transition_and_animation.html)。当时动画切换的基本思路定义几个`animation`，每个`animation`和一个`css`的`class`绑定，改变动画就是改变当前`div`的`class`。但是这个方法在 React 里面似乎不起作用，尝试在 Chrome 里面直接修改 React 渲染好的 dom 的 class，也没有效果，目前还不知道原因。

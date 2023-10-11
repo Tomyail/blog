@@ -69,6 +69,10 @@
     background-color: rgb(var(--gray-light));
     border-radius: 2px;
   }
+
+  .expressive-code {
+    @apply md:mb-4 mb-2;
+  }
   pre {
     @apply mb-4 p-4 rounded-lg;
   }

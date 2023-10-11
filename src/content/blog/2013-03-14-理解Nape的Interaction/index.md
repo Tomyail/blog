@@ -7,6 +7,7 @@ id: 1123
 slug: understanding-nape-interaction
 created_at: 2013-03-14T14:27:26.000Z
 updated_at: 2013-03-14T14:27:26.000Z
+description: 这篇文章主要介绍了 Nape 引擎中的交互方式和如何控制交互。作者首先介绍了 Nape 中的三种交互方式：碰撞、感应和浮力，并详细讲解了如何手动开启这些交互。接着，作者介绍了交互的优先级和如何通过 InteractionFilters 和 InteractionGroups 来控制交互。作者提供了一些示例代码来帮助读者更好地理解 InteractionFilters 的使用方法。最后，作者总结了自己的经验，并提醒读者在使用 Nape 引擎时需要注意的问题。
 ---
 
 有的时候我们想控制两个刚体是否发生碰撞,比如手机游戏 Doodle Jump 里面的小人在上升过程中不会和障碍物发生碰撞但在降落过程中会发生碰撞,这个时候就需要知道如何利用 Nape 来控制这个碰撞了.这里的碰撞在 Nape 看来是一种交互方式.Nape 定义了三种交互方式:
@@ -54,7 +55,7 @@ mask 是-1,二进制是 11...11.
 
 filter 版本小球碰撞的源码:
 
-```actionscript
+```actionscript-3
 private function testSimpleFilter():void
 {
     createBall(10, 5, 5, new Material(Number.POSITIVE_INFINITY));
@@ -111,11 +112,11 @@ C 的 mask 是 001 也就是十进制的 1;
 
 结果如下（小中大分别对应 abc）:
 
-<embed src="/images/uploads/2013/03/ComplexInteraction.swf" width="500" height="380">
+<!-- <embed src="/images/uploads/2013/03/ComplexInteraction.swf" width="500" height="380"> -->
 
 控制三组对象碰撞关系的 filter 版本源码:
 
-```actionscript
+```actionscript-3
 private function testMultiFilter():void
 {
 
@@ -196,7 +197,7 @@ Filter 只是 Shape 的属性,Nape 为 Interactor 类提供了 group 属性,这�
 
 group 版本小球碰撞的源码:
 
-```actionscript
+```actionscript-3
 private function testSimpleGroup():void
 {
     var group:InteractionGroup = new InteractionGroup();
@@ -213,7 +214,7 @@ private function testSimpleGroup():void
 
 控制三组对象碰撞关系的 group 版本源码:
 
-````actionscript
+```actionscript-3
 private function testMultiGroup():void
 {
     var groupA:InteractionGroup = new InteractionGroup(true);
@@ -265,7 +266,7 @@ groupA.group = groupAC;
 对于多次嵌套树结构,需要通过查找他们的最近共同祖先(MRCA)来确定是属于哪一个 group 的.这里拿官方手册上的例子好了.
 
 
-```text
+```
        Group1
       /   |
      /  Group2      Group3
@@ -297,7 +298,7 @@ Shp4 依次往上递归得到碰到的第一个 group 是 G3.
 2:结合这几个 Group 的关系就能确定最终得到的 Group 关系图:
 
 
-```text
+```
     Group1
     /   \           Group3
 Shp1    Group2        |
@@ -350,4 +351,3 @@ Shp4 是孤立的,所以不存在 Shp1 和 Shp4 之类的交互控制,**所以 S
 求两个节点的最近共同祖先(下图:来自<http://www.haogongju.net/art/581937>)
 
 [![Image(1)](./Image\(1\).png "Image(1)")](/images/uploads/2013/03/Image1.png)
-````

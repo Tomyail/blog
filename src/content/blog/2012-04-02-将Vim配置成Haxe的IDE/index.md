@@ -8,6 +8,7 @@ comment: true
 slug: vim-hexe-ide
 created_at: 2012-04-02T12:11:32.000Z
 updated_at: 2012-04-02T12:11:32.000Z
+description: 这篇文章主要介绍了如何将 Vim 配置成 Haxe 的 IDE。作者首先介绍了如何使用 VAM 安装 vim-haxe 插件，并提供了一些示例代码来帮助读者更好地理解。接着，作者介绍了如何让 Vim 随机加载 vim-haxe 插件，并提供了一些相关链接。作者还介绍了在使用 Nape 项目时遇到的问题，并提供了解决方案。最后，作者总结了自己的经验，并提醒读者在使用 Vim 配置 Haxe IDE 时需要注意的问题。
 ---
 
 将 Vim 作为 Haxe IDE 的过程基本完成，留此文备忘。

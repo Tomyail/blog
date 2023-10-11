@@ -7,6 +7,7 @@ id: 1180
 slug: nape-geompoly
 created_at: 2013-05-09T23:15:54.000Z
 updated_at: 2013-05-09T23:15:54.000Z
+description: 这篇文章主要介绍了 Nape 引擎中的 GeomPoly 类和 Polygon 类的关系。作者首先介绍了 GeomPoly 类的基本概念和用法，以及如何将其转换为 Polygon 类。接着，作者详细讲解了 Polygon 类中的 regular 算法，该算法可以用来创建一个规则的多边形。作者提供了一些示例代码来帮助读者更好地理解 Polygon 类的使用方法。最后，作者总结了自己的经验，并提醒读者在使用 Nape 引擎时需要注意的问题。
 ---
 
 ### Polygon 和 GeomPoly 的关系
@@ -15,7 +16,7 @@ Polygon 的构造函数和接收 GeomPoly.
 
 ### Polygon 的 regular 算法
 
-```actionscript
+```actionscript-3
 public static function regular(xRadius:Float, yRadius:Float, edgeCount:Int, angleOffset=0.0, weak:Bool=false):Array<Vec2> {
 
         DEBUG(if(isNaN(xRadius) || isNaN(yRadius) || isNaN(angleOffset))

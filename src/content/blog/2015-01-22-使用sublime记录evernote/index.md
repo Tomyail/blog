@@ -6,6 +6,7 @@ tags:
 slug: using-sublime-to-update-evernote
 created_at: 2015-01-21T18:22:15.000Z
 updated_at: 2015-01-21T18:22:15.000Z
+description: 这篇文章主要介绍了如何将 Sublime Text 3 中的 Markdown 文本同步到 Evernote 中。作者介绍了如何使用 Package Control 安装 MarkdownEditing 插件，并配置快捷键来打开和保存 Markdown 文本。接着，作者介绍了如何使用 Mou 预览 Markdown 文本，并将其同步到 Evernote 中。最后，作者提供了一些解决方案，如手动复制粘贴和更新 Evernote。
 ---
 
 evernote 的格式化编辑功能一直很弱,我平时写文档习惯使用 markdown 保持简单的格式.以前使用马克飞象编辑 markdown 文件然后同步到 evernote.

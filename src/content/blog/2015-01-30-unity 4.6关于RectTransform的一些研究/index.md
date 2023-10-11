@@ -7,6 +7,7 @@ id: 1259
 slug: unity-rect-transform
 created_at: 2015-01-30T10:42:58.000Z
 updated_at: 2015-01-30T10:42:58.000Z
+description: 这篇文章主要介绍了 Unity3D 中的坐标系和 RectTransform 的概念。作者首先介绍了 Unity3D 中的世界坐标和屏幕坐标的区别，以及 Rect 的使用方法。接着，作者详细讲解了 RectTransform 中的三要素：锚点、角和中心点，并解释了它们之间的关系。最后，作者提供了一些示例代码来帮助读者更好地理解 RectTransform 的使用方法。
 ---
 
 ### 坐标

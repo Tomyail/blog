@@ -6,6 +6,7 @@ tags:
 slug: debug-js-without-sourcemap
 created_at: 2016-08-29T16:43:01.000Z
 updated_at: 2016-08-29T16:43:01.000Z
+description: 这篇博客介绍了如何在没有 sourcemap 的情况下调试被 minify 过的 JavaScript 代码。作者首先介绍了使用 webpack 开发 JavaScript 项目时，生产环境和开发环境的区别，以及如何使用 sourcemap 进行代码调试。接着，作者提到了一些特殊情况下，即使开启了 sourcemap，也无法进行代码调试的情况。作者介绍了一种解决方案，即在生产环境也生成 sourcemap 文件，但是不将其嵌入到 JavaScript 或 HTML 文件中。作者介绍了如何使用 webpack 的 hidden-source-map 模式生成 sourcemap 文件，并借助 gulp 等任务工具将其放在服务器上。最终，作者介绍了如何在 Chrome 中使用这个 sourcemap 文件进行代码调试。
 ---
 
 用 webpack 开发 js 项目，生产环境和开发环境一般会使用两套配置，其中一个明显的区别就是对调试的支持。

@@ -8,6 +8,7 @@ comment: false
 slug: flash-coordinate-accuracy
 created_at: 2011-12-09T18:52:56.000Z
 updated_at: 2011-12-09T18:52:56.000Z
+description: 这篇博客主要介绍了 Flash 中坐标精度的问题。作者在使用坐标旋转公式写物体的运动时，发现出现了一个怪现象，理论上应该是标准圆周运动的代码最后出来的效果却是半径越来越小的圆周运动。作者通过排除浮点运算本身的误差，提出了一种更加精确的代码实现方式。最后，作者提醒读者在使用 Flash 进行坐标运算时需要注意精度问题。
 ---
 
 今天用坐标旋转公式写物体的运动刚开始出现了一个怪现象，理论上应该是标准圆周运动的代码最后出来的效果却是半径越来越小的圆周运动，错误的轨迹如下图：
@@ -20,7 +21,7 @@ updated_at: 2011-12-09T18:52:56.000Z
 
 这是大误差代码：
 
-```actionscript
+```actionscript-3
 protected function updateFrame(event:Event):void
 {
     preX = fish.x;
@@ -32,7 +33,7 @@ protected function updateFrame(event:Event):void
 
 这是”精确"的代码（排除浮点运算本身的误差 - -！）
 
-```actionscript
+```actionscript-3
 protected function updateFrame(event:Event):void
 {
     preX = currentX;
@@ -72,7 +73,7 @@ preX 48.296291314453434 curX 48.06308479691596 fishX 48.05
 
 本文[完整](https://gist.github.com/1450965)的正确代码：
 
-```actionscript
+```actionscript-3
 package demo
 {
     import flash.display.Sprite;
