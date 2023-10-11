@@ -11,15 +11,17 @@ import vercel from '@astrojs/vercel/serverless';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://blog.tomyail.com/',
+  // output: 'server',
+    // adapter: vercel({
+  //   webAnalytics: {
+  //     enabled: true,
+  //   },
+  // }),
   markdown: {
     remarkPlugins: [remarkToc],
     rehypePlugins: [rehypeHeadingIds],
   },
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
+
   integrations: [
     sitemap(),
     partytown({
