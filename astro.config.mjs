@@ -6,6 +6,7 @@ import tailwind from '@astrojs/tailwind';
 import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import astroExpressiveCode from 'astro-expressive-code';
 import remarkToc from 'remark-toc';
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,6 +15,11 @@ export default defineConfig({
     remarkPlugins: [remarkToc],
     rehypePlugins: [rehypeHeadingIds],
   },
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
   integrations: [
     sitemap(),
     partytown({
