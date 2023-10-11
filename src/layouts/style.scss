@@ -1,9 +1,5 @@
 .prose {
-  width: 800px;
-  max-width: calc(100% - 2em);
-  margin: auto;
-  color: rgb(var(--gray-dark));
-  @apply md:p-4 p-1;
+  /* @apply md:px-4 md:py-8 max-w-[calc(100%-2rem)] mx-auto md:w-[800px]; */
 
   h1,
   h2,

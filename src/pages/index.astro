@@ -22,7 +22,7 @@ const posts = (await getCollection('blog')).sort(
     <Header />
     <main>
       <section>
-        <ul class="flex flex-wrap gap-4 md:gap-10">
+        <ul class="flex flex-wrap gap-4 md:gap-10 mt-4">
           {
             posts.map((post) => (
               //md:w-[calc(50%-1rem)]

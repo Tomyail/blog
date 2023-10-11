@@ -40,9 +40,9 @@ body {
   /* background: linear-gradient(var(--gray-gradient)) no-repeat; */
   /* color: rgb(var(--gray-dark)); */
   line-height: 1.7;
-  @apply antialiased text-slate-500 dark:text-slate-400 bg-gradient-to-b from-white to-white/50  bg-no-repeat bg-fixed dark:bg-slate-900 h-full bg-cover text-base md:text-lg
+  @apply antialiased text-slate-500 dark:text-slate-400 bg-gradient-to-b from-white to-white/50  bg-no-repeat bg-fixed dark:bg-slate-900 h-full bg-cover text-base md:text-lg;
 }
 
 main {
-  @apply md:px-4 md:py-8 max-w-[calc(100%-2rem)] mx-auto md:w-[800px]
+  @apply md:px-4 md:py-8 max-w-[calc(100%-2rem)] mx-auto md:w-[800px];
 }
