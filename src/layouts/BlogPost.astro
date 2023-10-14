@@ -15,6 +15,7 @@ const { title, description, created_at, updated_at, heroImage } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
+    {import.meta.env.PROD && <GoogleAnalytics />}
   </head>
 
   <body>
