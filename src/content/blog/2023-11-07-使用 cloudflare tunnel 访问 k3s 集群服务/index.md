@@ -4,6 +4,8 @@ slug: using-cloudflare-tunnel-for-accessing-intranet-services-in-k3s-cluster
 created_at: 2023-11-07T09:05:14.021Z
 updated_at: 2023-11-07T09:13:35.320Z
 tags: [k8s, cloudflare, k3s, cloudflare-tunnel, ingress]
+heroImage: "./cover.jpeg"
+
 description: 这篇博客主要介绍了如何使用 Cloudflare Tunnel 访问 k3s 集群服务。作者首先提到了在构建家庭实验室时，常常需要从互联网访问自家的服务，但由于 IP 地址的问题，外部网络无法进行访问。作者曾尝试使用花生壳，frp 等工具进行内网穿透，但都因为各种问题放弃了。最后，作者选择了 Cloudflare Tunnel，因为它免费、配置简单，且提供的带宽基本能达到宽带的最大上行带宽。然后，作者详细介绍了 Cloudflare Tunnel 的工作原理，包括如何将域名交由 Cloudflare 进行解析，如何在内部网络中运行一个名为 Cloudflared 的服务，以及如何通过 Cloudflare 访问域名等。最后，作者提到了在集群里配置 Cloudflare Tunnel 的优点，比如可以直接访问集群内的服务以及局域网内的其他服务，提供了更大的灵活性，以及实现了一定程度的高可用性。
 ---
 
