@@ -486,9 +486,23 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"2023-09-01-drawtest/index.md": {
+	id: "2023-09-01-drawtest/index.md";
+  slug: "2023-09-01-drawtest";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "2023-09-23-使用k3s 和 tailscale 在甲骨文云和家之间搭建 kubernetes集群/index.md": {
 	id: "2023-09-23-使用k3s 和 tailscale 在甲骨文云和家之间搭建 kubernetes集群/index.md";
   slug: "using-k3s-and-tailscale-to-build-kubernets-cluster-between-oraclecloud-and-home";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
+"2023-11-07-使用 cloudflare tunnel 访问 k3s 集群服务/index.md": {
+	id: "2023-11-07-使用 cloudflare tunnel 访问 k3s 集群服务/index.md";
+  slug: "using-cloudflare-tunnel-for-accessing-intranet-services-in-k3s-cluster";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">

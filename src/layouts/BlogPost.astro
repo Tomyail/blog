@@ -6,17 +6,19 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
-import {Image} from 'astro:assets'
+import {Image,getImage} from 'astro:assets'
 
 type Props = CollectionEntry<'blog'>['data'];
 
 const oneDay = 24 * 60 * 60 * 1000;
 const { title, description, created_at, updated_at, heroImage } = Astro.props;
+
+console.log(new URL('xx',Astro.url.href+'/'))
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} image={'cover'} />
     {import.meta.env.PROD && <GoogleAnalytics />}
   </head>
 
@@ -25,7 +27,7 @@ const { title, description, created_at, updated_at, heroImage } = Astro.props;
     <main >
       <article>
 				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" class="w-[1020px] h-[510px] hidden sm:block"/>}
+					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" class="w-[1020px] h-[510px] hidden sm:block object-cover"/>}
 				</div>
         <div class="prose">
           <div class="mb-4 py-4 text-center leading-none">
