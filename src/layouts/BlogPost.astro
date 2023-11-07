@@ -9,6 +9,7 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
+const oneDay = 24 * 60 * 60 * 1000;
 const { title, description, created_at, updated_at, heroImage } = Astro.props;
 ---
 
@@ -27,7 +28,7 @@ const { title, description, created_at, updated_at, heroImage } = Astro.props;
             <div class="text-right text-sm  tracking-tighter italic">
               <FormattedDate date={created_at} />
               {
-                updated_at && updated_at > created_at && (
+                updated_at && (updated_at - created_at > oneDay ) && (
                   <div class="last-updated-on">
                     最后更新于 <FormattedDate date={updated_at} />
                   </div>
