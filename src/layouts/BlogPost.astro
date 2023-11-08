@@ -13,12 +13,11 @@ type Props = CollectionEntry<'blog'>['data'];
 const oneDay = 24 * 60 * 60 * 1000;
 const { title, description, created_at, updated_at, heroImage } = Astro.props;
 
-console.log(new URL('xx',Astro.url.href+'/'))
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={'cover'} />
+    <BaseHead title={title} description={description} image={heroImage?.src} />
     {import.meta.env.PROD && <GoogleAnalytics />}
   </head>
 
