@@ -25,6 +25,6 @@
   },
   "devDependencies": {
     "@astrojs/partytown": "^2.0.0",
-    "daisyui": "^3.8.0"
+    "daisyui": "^4.0.0"
   }
 }
