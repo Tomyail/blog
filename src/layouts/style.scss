@@ -62,7 +62,7 @@
   }
   code {
     padding: 2px 5px;
-    background-color: rgb(var(--gray-light));
+    @apply bg-gray-100;
     border-radius: 2px;
   }
 
