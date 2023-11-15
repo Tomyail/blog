@@ -148,8 +148,6 @@ kind: Deployment
 metadata:
   name: cloudflared
 spec:
-  strategy:
-    type: RollingUpdate
   selector:
     matchLabels:
       app: cloudflared
@@ -234,7 +232,20 @@ kubectl apply -f 00-configmap.yaml -f 01-cloudflared.yaml
 每次新增ingress规则，你都需要修改 _00-configmap.yaml_ 配置文件然后执行
 
 ```yaml
-kubectl apply -f 00-configmap.yaml -f 01-cloudflared.yaml
+kubectl apply -f 00-configmap.yaml
 ```
 
+
+Deployment 并不会随着 configmap 自动更新，你需要手动重启相关的 pod 好让 cloudflared 加载最新的配置。
+
+
 之后进入 cloudflare 新增一条 CNAME。
+
+
+## 最终效果
+
+
+直连 cloudflare 没测试过，因为家里所有的设备都会经过主路由，主路由配置了 openclash，而我给 cloudflare 的服务器 `*.v2.argotunnel.com` 都[配置了代理](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/deploy-tunnels/tunnel-with-firewall/)。代理 vps 是搬瓦工的，速度还行,下载速度如下图:
+
+
+![image.png](./image_1699596498570_0.png)
