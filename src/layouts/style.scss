@@ -46,6 +46,8 @@
     width: 100%;
   }
   table {
+    display: block;
+    overflow-x: auto;
     @apply border-collapse table-auto w-full;
     @apply mb-4;
   }
