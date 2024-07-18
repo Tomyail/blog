@@ -14,7 +14,7 @@ export async function GET(context) {
         link: `${post.slug}?utm_source=rss&utm_medium=rss&utm_campaign=rss`,
         pubDate: post.data.created_at,
       }))
-      .filter(post=> import.meta.env.PROD ? post.data.draft !== true : true)
+      .filter(post=> import.meta.env.PROD ? post?.data?.draft !== true : true)
       .sort((a, b) => b.pubDate - a.pubDate),
   });
 }

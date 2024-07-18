@@ -9,7 +9,7 @@ import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.created_at - a.data.created_at,
-).filter(post=> import.meta.env.PROD ? post.data.draft !== true : true)
+).filter(post=> import.meta.env.PROD ? post?.data?.draft !== true : true)
 ---
 
 <!doctype html>
